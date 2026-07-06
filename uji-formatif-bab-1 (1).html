@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Uji Formatif Bab 1 - Ekonomi Mikro: Permintaan | Ekonomi Mikro-Makro Indonesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-graph-up me-2"></i>Ekonomi Mikro-Makro Indonesia</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-center gap-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#bab">Daftar Bab</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#penulis">Penulis</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="chapter-header">
+      <div class="container">
+        <h1><i class="bi bi-pencil-square"></i> Uji Formatif Bab 1</h1>
+        <p class="subtitle" style="color: rgba(255, 255, 255, 0.8)">Pengertian Ekonomi Mikro & Permintaan</p>
+      </div>
+    </header>
+
+    <section class="quiz-section">
+      <div class="quiz-container">
+        <div class="quiz-formatif">
+          <h2>📖 Uji Formatif Bab 1</h2>
+          <p style="margin-bottom: 1.5rem; color: var(--text-muted)">
+            📋 Bagian A: Pilihan Ganda (10 soal, skor 10/soal) | ✍️ Bagian B: Essay (5 soal, skor 20/soal)<br />
+            Materi: Definisi ekonomi mikro, hukum permintaan, faktor-faktor permintaan, kurva permintaan, dan aplikasi di Indonesia.
+          </p>
+
+          <!-- Data Mahasiswa -->
+          <div class="student-form">
+            <h3>📋 Data Mahasiswa</h3>
+            <div class="form-group">
+              <label><span class="required-star">*</span> Nama Lengkap</label><input type="text" id="nama-mhs" class="form-control" placeholder="Masukkan nama lengkap" />
+            </div>
+            <div class="form-group">
+              <label><span class="required-star">*</span> NIM</label><input type="text" id="nim-mhs" class="form-control" placeholder="Masukkan NIM" />
+            </div>
+            <div class="form-group"><label>📅 Tanggal Ujian</label><input type="text" id="tanggal-mhs" class="form-control" readonly /></div>
+            <div class="form-group"><label>Fakultas</label><input type="text" id="fakultas-mhs" class="form-control" placeholder="Contoh: Ekonomi dan Bisnis" /></div>
+            <div class="form-group"><label>Jurusan / Prodi</label><input type="text" id="prodi-mhs" class="form-control" placeholder="Contoh: Ekonomi Pembangunan" /></div>
+            <div class="form-group"><label>Semester</label><input type="text" id="semester-mhs" class="form-control" placeholder="Contoh: 3" /></div>
+            <div class="form-group"><label>Kelas</label><input type="text" id="kelas-mhs" class="form-control" placeholder="A/B/C" /></div>
+          </div>
+
+          <div class="section-title-formatif">📋 Bagian A – Pilihan Ganda</div>
+          <div id="mcq-section"></div>
+          <div id="msg-incomplete-mcq" style="display: none; color: red">⚠️ Lengkapi semua 10 soal pilihan ganda!</div>
+
+          <div class="section-title-formatif">✍️ Bagian B – Essay</div>
+          <div id="essay-section"></div>
+          <div id="msg-incomplete-student" style="display: none; color: red">⚠️ Isi Nama Lengkap dan NIM terlebih dahulu!</div>
+
+          <div id="result-area" class="result-area">
+            <div id="result-student-info"></div>
+            <div style="font-size: 1.2em; font-weight: bold">Skor Akhir Agregat</div>
+            <div id="score-text" class="score-circle">0</div>
+            <div id="score-desc" style="font-weight: bold; font-size: 1.1em"></div>
+            <div class="sub-score-row">
+              <span>📋 PG: <span id="mcq-score-display">0</span>/100</span>
+              <span>✍️ Essay: <span id="essay-score-display">0</span>/100</span>
+            </div>
+          </div>
+
+          <button id="btn-submit" class="btn-formatif">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+          <div class="btn-group">
+            <button id="btn-download-pdf" class="btn-formatif" style="display: none">📥 UNDUH PDF LENGKAP</button>
+            <button id="btn-download-score" class="btn-formatif" style="display: none">📊 UNDUH SKOR SAJA</button>
+            <button id="btn-email-dosen" class="btn-formatif" style="display: none; background: #0d6efd">✉️ Kirim Email Dosen</button>
+            <button id="btn-restart" class="btn-formatif" style="display: none">🔄 MULAI ULANG</button>
+          </div>
+
+          <!-- TOMBOL NAVIGASI BAWAH -->
+          <div class="bottom-nav">
+            <a href="index.html" class="btn btn-outline-secondary"><i class="bi bi-house-door"></i> Kembali ke Beranda</a>
+            <a href="bab-1.html" class="btn btn-outline-secondary"><i class="bi bi-book"></i> Kembali ke Materi Bab 1</a>
+            <a href="bab-2.html" class="btn btn-outline-secondary"><i class="bi bi-book"></i> Lanjut ke Materi Bab 2</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer-brand"><i class="bi bi-graph-up me-2"></i>Ekonomi Mikro-Makro Indonesia</div>
+            <p>Buku daras untuk mahasiswa ekonomi. Teori, kebijakan, dan kasus Indonesia.</p>
+          </div>
+          <div class="col-lg-2 col-md-4">
+            <h6>Navigasi</h6>
+            <ul class="footer-links">
+              <li><a href="index.html">Beranda</a></li>
+              <li><a href="index.html#bab">Daftar Bab</a></li>
+              <li><a href="index.html#penulis">Penulis</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h6>Buku</h6>
+            <ul class="footer-links">
+              <li><a href="#">Cetak — Rp 149.000</a></li>
+              <li><a href="#">E-Book — Rp 89.000</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h6>Kontak</h6>
+            <ul class="footer-links">
+              <li><i class="bi bi-envelope me-2"></i>anton_athoillah@ekonomi.ac.id</li>
+              <li><i class="bi bi-telephone me-2"></i>+62 812 3456 7890</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom text-center pt-4 mt-3 border-top"><p>&copy; 2026 Mohamad Anton Athoillah. Hak cipta dilindungi.</p></div>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // ========== SOAL BAB 1 ==========
+      const mcqBank = [
+        {
+          q: "Apa yang dimaksud dengan ekonomi mikro?",
+          options: ["Studi tentang agregat ekonomi nasional", "Studi tentang perilaku unit ekonomi individual", "Studi tentang perdagangan internasional", "Studi tentang kebijakan fiskal"],
+          correct: "Studi tentang perilaku unit ekonomi individual",
+        },
+        {
+          q: "Hukum permintaan menyatakan bahwa ...",
+          options: ["Jika harga naik, jumlah diminta naik", "Jika harga naik, jumlah diminta turun", "Harga dan jumlah diminta tidak berhubungan", "Jika harga turun, jumlah diminta turun"],
+          correct: "Jika harga naik, jumlah diminta turun",
+        },
+        { q: "Berikut ini yang BUKAN merupakan faktor yang mempengaruhi permintaan adalah ...", options: ["Harga barang itu sendiri", "Biaya produksi", "Pendapatan konsumen", "Selera konsumen"], correct: "Biaya produksi" },
+        { q: "Jika harga barang substitusi naik, maka permintaan terhadap barang yang bersangkutan cenderung ...", options: ["Naik", "Turun", "Tetap", "Tidak dapat ditentukan"], correct: "Naik" },
+        { q: "Kurva permintaan memiliki kemiringan ...", options: ["Positif", "Negatif", "Vertikal", "Horizontal"], correct: "Negatif" },
+        { q: "Pergeseran kurva permintaan ke kanan menunjukkan ...", options: ["Penurunan permintaan", "Kenaikan permintaan", "Kenaikan harga", "Penurunan harga"], correct: "Kenaikan permintaan" },
+        { q: "Ceteris paribus dalam analisis permintaan berarti ...", options: ["Faktor lain berubah", "Faktor lain tetap", "Harga tetap", "Pendapatan tetap"], correct: "Faktor lain tetap" },
+        { q: "Contoh barang normal adalah ...", options: ["Beras", "Mobil mewah", "Mi instan", "Baju bekas"], correct: "Mobil mewah" },
+        { q: "Jika pendapatan konsumen meningkat, permintaan terhadap barang inferior akan ...", options: ["Meningkat", "Menurun", "Tetap", "Bergantung pada harga"], correct: "Menurun" },
+        {
+          q: "Efek substitusi terjadi ketika konsumen ...",
+          options: ["Membeli lebih banyak karena pendapatan riil naik", "Mengganti barang yang mahal dengan yang lebih murah", "Menunda pembelian karena ekspektasi harga turun", "Membeli lebih banyak karena selera berubah"],
+          correct: "Mengganti barang yang mahal dengan yang lebih murah",
+        },
+      ];
+
+      const essayBank = [
+        {
+          q: "Jelaskan perbedaan antara pergerakan sepanjang kurva permintaan dan pergeseran kurva permintaan! Berikan contoh masing-masing!",
+          keywords: [
+            { main: "pergerakan", aliases: ["harga"] },
+            { main: "pergeseran", aliases: ["non harga"] },
+            { main: "ceteris paribus", aliases: ["faktor lain"] },
+            { main: "contoh", aliases: ["subsidi", "pendapatan"] },
+          ],
+          modelAnswer:
+            "Pergerakan sepanjang kurva terjadi akibat perubahan harga barang itu sendiri, misal harga turun menyebabkan kuantitas diminta naik. Pergeseran kurva akibat faktor non-harga seperti pendapatan, selera, atau harga substitusi, misal kenaikan pendapatan menggeser kurva permintaan ke kanan.",
+        },
+        {
+          q: "Sebutkan minimal 4 faktor yang dapat menggeser kurva permintaan (selain harga) dan jelaskan pengaruhnya!",
+          keywords: [
+            { main: "pendapatan", aliases: ["daya beli"] },
+            { main: "selera", aliases: ["preferensi"] },
+            { main: "substitusi", aliases: ["komplementer"] },
+            { main: "populasi", aliases: ["jumlah penduduk"] },
+            { main: "ekspektasi", aliases: ["harapan harga"] },
+          ],
+          modelAnswer:
+            "1. Pendapatan: naik → permintaan barang normal naik. 2. Harga substitusi: naik → permintaan barang terkait naik. 3. Selera: perubahan tren. 4. Jumlah penduduk: bertambah → permintaan agregat naik. 5. Ekspektasi harga masa depan.",
+        },
+        {
+          q: "Jelaskan apa yang dimaksud dengan barang normal dan barang inferior, serta berikan contoh masing-masing di Indonesia!",
+          keywords: [
+            { main: "normal", aliases: ["pendapatan naik"] },
+            { main: "inferior", aliases: ["pendapatan turun"] },
+            { main: "contoh", aliases: ["mobil", "mi instan", "bawang"] },
+          ],
+          modelAnswer: "Barang normal: permintaan naik saat pendapatan naik (contoh: makan di restoran). Barang inferior: permintaan turun saat pendapatan naik (contoh: mi instan, transportasi angkutan umum).",
+        },
+        {
+          q: "Berdasarkan kasus kenaikan harga BBM di Indonesia tahun 2022, analisislah dampaknya terhadap permintaan BBM dan permintaan kendaraan listrik menggunakan konsep elastisitas dan substitusi!",
+          keywords: [
+            { main: "BBM", aliases: ["subsidi"] },
+            { main: "kendaraan listrik", aliases: ["substitusi"] },
+            { main: "substitusi", aliases: ["efek"] },
+            { main: "elastisitas", aliases: ["harga"] },
+          ],
+          modelAnswer:
+            "Kenaikan harga BBM menyebabkan penurunan permintaan BBM (hukum permintaan). BBM dan kendaraan listrik adalah barang substitusi, sehingga permintaan kendaraan listrik meningkat. Kebijakan subsidi kendaraan listrik memperkuat pergeseran permintaan.",
+        },
+        {
+          q: "Gambarkan (dalam deskripsi) sebuah kurva permintaan yang mengalami pergeseran ke kanan. Jelaskan satu faktor yang mungkin menyebabkan pergeseran tersebut di Indonesia!",
+          keywords: [
+            { main: "kurva", aliases: ["grafik"] },
+            { main: "kanan", aliases: ["naik"] },
+            { main: "faktor", aliases: ["pendapatan", "populasi"] },
+            { main: "Indonesia", aliases: ["contoh"] },
+          ],
+          modelAnswer:
+            "Kurva permintaan bergeser ke kanan berarti pada setiap tingkat harga, jumlah diminta lebih banyak. Faktor: peningkatan pendapatan masyarakat akibat kenaikan UMP, atau meningkatnya jumlah penduduk, atau perubahan selera terhadap produk tertentu.",
+        },
+      ];
+
+      let currentEssayQuestions = [],
+        currentMcqQuestions = [],
+        mcqUserAnswers = {},
+        examSubmitted = false;
+      const EMAIL_DOSEN = "anton_athoillah@uinsgd.ac.id";
+
+      function shuffle(arr) {
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+      }
+
+      function getTodayFormatted() {
+        const d = new Date();
+        const bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        return `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`;
+      }
+
+      function escapeHTML(s) {
+        if (!s) return "";
+        const div = document.createElement("div");
+        div.appendChild(document.createTextNode(s));
+        return div.innerHTML;
+      }
+
+      function renderMcq() {
+        const container = document.getElementById("mcq-section");
+        container.innerHTML = "";
+        currentMcqQuestions.forEach((d, i) => {
+          const block = document.createElement("div");
+          block.className = "question-block";
+          block.id = `mcq-block-${i}`;
+          block.innerHTML = `<div class="question-text">${i + 1}. ${d.q}</div><div class="options-container"></div>`;
+          const optsDiv = block.querySelector(".options-container");
+          const shuffledOptions = shuffle([...d.options]);
+          shuffledOptions.forEach((opt) => {
+            const optDiv = document.createElement("div");
+            optDiv.className = "option";
+            optDiv.innerText = opt;
+            optDiv.onclick = () => {
+              if (!examSubmitted) {
+                mcqUserAnswers[i] = opt;
+                optsDiv.querySelectorAll(".option").forEach((c) => c.classList.remove("selected"));
+                optDiv.classList.add("selected");
+                document.getElementById("msg-incomplete-mcq").style.display = "none";
+              }
+            };
+            optsDiv.appendChild(optDiv);
+          });
+          container.appendChild(block);
+        });
+      }
+
+      function renderEssay() {
+        const container = document.getElementById("essay-section");
+        container.innerHTML = "";
+        currentEssayQuestions.forEach((d, i) => {
+          const block = document.createElement("div");
+          block.className = "question-block";
+          block.innerHTML = `<div class="question-text">${i + 1}. ${d.q}</div><textarea id="essay-ans-${i}" class="form-control" rows="3" placeholder="Tulis jawaban Anda..."></textarea><div id="essay-feedback-${i}" class="feedback"></div>`;
+          container.appendChild(block);
+        });
+      }
+
+      function containsKeyword(ans, kwObj) {
+        const clean = ans.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, " ");
+        if (clean.includes(kwObj.main.toLowerCase())) return true;
+        return kwObj.aliases.some((a) => clean.includes(a.toLowerCase()));
+      }
+
+      const STOP_WORDS = new Set([
+        "yang",
+        "dan",
+        "di",
+        "ke",
+        "dari",
+        "dengan",
+        "untuk",
+        "pada",
+        "adalah",
+        "ini",
+        "itu",
+        "tersebut",
+        "tidak",
+        "juga",
+        "akan",
+        "sangat",
+        "oleh",
+        "sebagai",
+        "atau",
+        "dalam",
+        "bahwa",
+        "mereka",
+        "kami",
+        "kita",
+        "saya",
+        "anda",
+        "dia",
+        "ia",
+        "hal",
+        "atas",
+        "bawah",
+        "antara",
+        "sudah",
+        "telah",
+        "belum",
+        "bisa",
+        "dapat",
+        "melakukan",
+        "menjadi",
+        "sebuah",
+      ]);
+
+      function getWords(t) {
+        return t
+          .toLowerCase()
+          .replace(/[^a-z0-9\s]/g, " ")
+          .split(/\s+/)
+          .filter((w) => w.length > 2 && !STOP_WORDS.has(w));
+      }
+
+      function isAnswerRelevant(userAns, modelAns, keywords) {
+        if (!userAns.trim()) return false;
+        const userWords = getWords(userAns);
+        const modelWords = new Set(getWords(modelAns));
+        let kwCount = keywords.filter((kw) => containsKeyword(userAns, kw)).length;
+        if (kwCount >= 2) return true;
+        let intersect = userWords.filter((w) => modelWords.has(w)).length;
+        if (intersect >= 5) return true;
+        if (userWords.length >= 15 && kwCount >= 1) return true;
+        return false;
+      }
+
+      function evaluateEssay() {
+        let total = 0;
+        currentEssayQuestions.forEach((data, idx) => {
+          const ans = document.getElementById(`essay-ans-${idx}`).value;
+          const fbDiv = document.getElementById(`essay-feedback-${idx}`);
+          const relevant = isAnswerRelevant(ans, data.modelAnswer, data.keywords);
+          let found = data.keywords.filter((kw) => containsKeyword(ans, kw)).length;
+          let finalScore = relevant ? Math.min(20, Math.max(18, (found / data.keywords.length) * 20)) : (found / data.keywords.length) * 20;
+          finalScore = Math.round(finalScore * 10) / 10;
+          total += finalScore;
+          const kwHtml = data.keywords.map((kw) => `<span class="${containsKeyword(ans, kw) ? "kw-found" : "kw-missed"}">${kw.main} ${containsKeyword(ans, kw) ? "✓" : "✗"}</span>`).join(" ");
+          fbDiv.innerHTML = `<div class="student-answer-display"><strong>Jawaban Anda:</strong><br>${escapeHTML(ans.trim() || "(kosong)")}</div><div><strong>Jumlah kata:</strong> ${ans.trim().split(/\s+/).length}</div><div class="${relevant ? "relevance-yes" : "relevance-no"}">${relevant ? "✅ Relevan (skor minimal 18/20)" : "❌ Tidak Relevan"}</div><div><strong>Kata kunci ditemukan:</strong> ${found}/${data.keywords.length}</div><div class="keyword-container">${kwHtml}</div><div><strong>Skor soal ini:</strong> ${finalScore} / 20</div><div class="mt-2 fst-italic text-muted">📖 Kunci Jawaban (Model): ${escapeHTML(data.modelAnswer)}</div>`;
+          fbDiv.style.display = "block";
+          document.getElementById(`essay-ans-${idx}`).disabled = true;
+        });
+        return Math.round(total);
+      }
+
+      function evaluateMcq() {
+        let score = 0;
+        currentMcqQuestions.forEach((d, i) => {
+          const block = document.getElementById(`mcq-block-${i}`);
+          block.querySelectorAll(".option").forEach((opt) => {
+            opt.style.pointerEvents = "none";
+            if (opt.innerText === d.correct) {
+              opt.classList.add("correct-reveal");
+              if (!opt.innerText.includes("✓")) opt.innerText = d.correct + " ✓ (Benar)";
+            } else if (mcqUserAnswers[i] === opt.innerText) {
+              opt.classList.add("wrong-reveal");
+              opt.innerText = opt.innerText + " ✗ (Pilihan Anda)";
+            }
+          });
+          if (mcqUserAnswers[i] === d.correct) score += 10;
+        });
+        return score;
+      }
+
+      function submitAll() {
+        if (!document.getElementById("nama-mhs").value.trim() || !document.getElementById("nim-mhs").value.trim()) {
+          document.getElementById("msg-incomplete-student").style.display = "block";
+          alert("Isi Nama Lengkap dan NIM!");
+          return;
+        }
+        document.getElementById("msg-incomplete-student").style.display = "none";
+        if (Object.keys(mcqUserAnswers).length < currentMcqQuestions.length) {
+          document.getElementById("msg-incomplete-mcq").style.display = "block";
+          alert("Lengkapi semua pilihan ganda!");
+          return;
+        }
+        document.getElementById("msg-incomplete-mcq").style.display = "none";
+        examSubmitted = true;
+        const essayScore = evaluateEssay();
+        const mcqScore = evaluateMcq();
+        const agg = Math.round((essayScore + mcqScore) / 2);
+        document.getElementById("essay-score-display").innerText = essayScore;
+        document.getElementById("mcq-score-display").innerText = mcqScore;
+        document.getElementById("score-text").innerText = agg;
+        document.getElementById("result-area").style.display = "block";
+        document.getElementById("btn-submit").style.display = "none";
+        document.getElementById("btn-restart").style.display = "inline-flex";
+        document.getElementById("btn-download-pdf").style.display = "inline-flex";
+        document.getElementById("btn-download-score").style.display = "inline-flex";
+        document.getElementById("btn-email-dosen").style.display = "inline-flex";
+        const nama = document.getElementById("nama-mhs").value.trim();
+        const nim = document.getElementById("nim-mhs").value.trim();
+        const fakultas = document.getElementById("fakultas-mhs").value.trim() || "-";
+        const prodi = document.getElementById("prodi-mhs").value.trim() || "-";
+        const semester = document.getElementById("semester-mhs").value.trim() || "-";
+        const kelas = document.getElementById("kelas-mhs").value.trim() || "-";
+        document.getElementById("result-student-info").innerHTML = `<table class="table table-sm">${[
+          ["Nama", nama],
+          ["NIM", nim],
+          ["Fakultas", fakultas],
+          ["Prodi", prodi],
+          ["Semester", semester],
+          ["Kelas", kelas],
+        ]
+          .map(([k, v]) => `<tr><th>${k}</th><td>${escapeHTML(v)}</td></tr>`)
+          .join("")}</table>`;
+        let desc = agg >= 90 ? "🏆 Mumtaz" : agg >= 75 ? "🌟 Jayyid Jiddan" : agg >= 60 ? "👍 Jayyid" : "📚 Dhaif";
+        document.getElementById("score-desc").innerText = desc;
+        window.scrollTo(0, 0);
+      }
+
+      function downloadPDF() {
+        if (!examSubmitted) {
+          alert("Kirim jawaban dulu.");
+          return;
+        }
+        const nama = document.getElementById("nama-mhs").value.trim();
+        const originalTitle = document.title;
+        document.title = `Hasil_Ujian_${nama}`;
+        window.print();
+        setTimeout(() => {
+          document.title = originalTitle;
+        }, 1000);
+      }
+
+      function downloadScoreOnly() {
+        if (!examSubmitted) {
+          alert("Kirim jawaban dulu.");
+          return;
+        }
+        const nama = document.getElementById("nama-mhs").value.trim();
+        const nim = document.getElementById("nim-mhs").value.trim();
+        const fakultas = document.getElementById("fakultas-mhs").value.trim() || "-";
+        const prodi = document.getElementById("prodi-mhs").value.trim() || "-";
+        const semester = document.getElementById("semester-mhs").value.trim() || "-";
+        const kelas = document.getElementById("kelas-mhs").value.trim() || "-";
+        const mcqScore = document.getElementById("mcq-score-display").innerText;
+        const essayScore = document.getElementById("essay-score-display").innerText;
+        const aggScore = document.getElementById("score-text").innerText;
+        const predikat = document.getElementById("score-desc").innerText;
+        const tanggal = document.getElementById("tanggal-mhs").value;
+        const content = `LAPORAN HASIL UJI FORMATIF BAB 1\nNama: ${nama}\nNIM: ${nim}\nFakultas: ${fakultas}\nProdi: ${prodi}\nSemester: ${semester}\nKelas: ${kelas}\nTanggal: ${tanggal}\nSkor PG: ${mcqScore}/100\nSkor Essay: ${essayScore}/100\nSkor Akhir: ${aggScore}\nPredikat: ${predikat}`;
+        const blob = new Blob([content], { type: "text/plain" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = `Skor_Ujian_${nim}.txt`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }
+
+      function sendEmailToDosen() {
+        if (!examSubmitted) {
+          alert("Selesaikan ujian terlebih dahulu.");
+          return;
+        }
+        const nama = document.getElementById("nama-mhs").value.trim();
+        const nim = document.getElementById("nim-mhs").value.trim();
+        const fakultas = document.getElementById("fakultas-mhs").value.trim() || "-";
+        const prodi = document.getElementById("prodi-mhs").value.trim() || "-";
+        const semester = document.getElementById("semester-mhs").value.trim() || "-";
+        const kelas = document.getElementById("kelas-mhs").value.trim() || "-";
+        const tanggal = document.getElementById("tanggal-mhs").value;
+        const mcqScore = document.getElementById("mcq-score-display").innerText;
+        const essayScore = document.getElementById("essay-score-display").innerText;
+        const totalScore = document.getElementById("score-text").innerText;
+        const predikat = document.getElementById("score-desc").innerText;
+        let pgSummary = "",
+          essaySummary = "";
+        for (let i = 0; i < Math.min(5, currentMcqQuestions.length); i++) {
+          const userAns = mcqUserAnswers[i] || "(kosong)";
+          const correct = currentMcqQuestions[i].correct;
+          pgSummary += `${i + 1}. ${userAns} (${userAns === correct ? "✓" : "✗"})\n`;
+        }
+        for (let i = 0; i < currentEssayQuestions.length; i++) {
+          const ans = document.getElementById(`essay-ans-${i}`) ? document.getElementById(`essay-ans-${i}`).value : "";
+          essaySummary += `Essay ${i + 1}: ${ans.substring(0, 100)}${ans.length > 100 ? "…" : ""}\n`;
+        }
+        const subject = `Hasil Uji Formatif Bab 1 - ${nama} (${nim})`;
+        const body = `Yth. Bapak/Ibu Dosen,\n\nBerikut hasil Uji Formatif Bab 1 (Pengertian Ekonomi Mikro & Permintaan).\n\nData Mahasiswa:\nNama: ${nama}\nNIM: ${nim}\nFakultas: ${fakultas}\nProdi: ${prodi}\nSemester: ${semester}\nKelas: ${kelas}\nTanggal: ${tanggal}\n\nSkor PG: ${mcqScore}/100\nSkor Essay: ${essayScore}/100\nSkor Akhir: ${totalScore}\nPredikat: ${predikat}\n\n--- Cuplikan Jawaban ---\n${pgSummary}\n${essaySummary}\n\nFile PDF lengkap dengan kunci jawaban dapat dilampirkan (unduh dari tombol PDF).\n\nTerima kasih.\n${nama}`;
+        window.location.href = `mailto:${EMAIL_DOSEN}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+
+      function restartExam() {
+        if (confirm("Yakin ingin memulai ulang? Semua jawaban akan hilang.")) location.reload();
+      }
+
+      function initQuiz() {
+        examSubmitted = false;
+        document.getElementById("result-area").style.display = "none";
+        document.getElementById("btn-restart").style.display = "none";
+        document.getElementById("btn-download-pdf").style.display = "none";
+        document.getElementById("btn-download-score").style.display = "none";
+        document.getElementById("btn-email-dosen").style.display = "none";
+        document.getElementById("btn-submit").style.display = "inline-flex";
+        mcqUserAnswers = {};
+        currentMcqQuestions = shuffle([...mcqBank]);
+        currentEssayQuestions = shuffle([...essayBank]);
+        document.getElementById("tanggal-mhs").value = getTodayFormatted();
+        renderMcq();
+        renderEssay();
+        document.querySelectorAll("textarea").forEach((t) => {
+          t.value = "";
+          t.disabled = false;
+        });
+        document.querySelectorAll(".feedback").forEach((fb) => {
+          fb.style.display = "none";
+          fb.innerHTML = "";
+        });
+      }
+
+      window.onload = initQuiz;
+      document.getElementById("btn-submit").onclick = submitAll;
+      document.getElementById("btn-restart").onclick = restartExam;
+      document.getElementById("btn-download-pdf").onclick = downloadPDF;
+      document.getElementById("btn-download-score").onclick = downloadScoreOnly;
+      document.getElementById("btn-email-dosen").onclick = sendEmailToDosen;
+      window.addEventListener("scroll", () => {
+        const back = document.getElementById("backToTop");
+        if (window.scrollY > 500) back.classList.add("visible");
+        else back.classList.remove("visible");
+      });
+    </script>
+  </body>
+</html>

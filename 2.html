@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2 - Teks Eksposisi | Buku Bahasa Indonesia Kelas 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* ========== HEADER & BREADCRUMB ========== */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        header h1 a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        header h1 a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+
+        /* ========== HERO BAB ========== */
+        .bab-hero {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bab-hero .label {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .bab-hero h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bab-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .bab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .bab-nav a {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .bab-nav a:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        /* ========== KONTEN UTAMA ========== */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .content article {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content h3 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .content h3:first-child {
+            margin-top: 0;
+        }
+
+        .content h4 {
+            color: #2a5298;
+            font-size: 1.15rem;
+            margin: 20px 0 10px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content ul, .content ol {
+            margin: 15px 0 20px 25px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content strong {
+            color: #1e3c72;
+        }
+
+        /* ========== KOTAK DEFINISI / KUTIPAN ========== */
+        .definisi {
+            background: #f4f7fb;
+            border-left: 5px solid #ffd700;
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .definisi strong {
+            font-style: normal;
+            color: #1e3c72;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .info-box h4 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        /* ========== CONTOH TEKS ========== */
+        .contoh-teks {
+            background: #fff8dc;
+            border: 2px dashed #ffd700;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .contoh-teks h4 {
+            color: #1e3c72;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .contoh-teks .judul-teks {
+            font-weight: bold;
+            color: #2a5298;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .contoh-teks p {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .struktur-label {
+            display: inline-block;
+            background: #1e3c72;
+            color: #ffd700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* ========== TABEL ========== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        table th {
+            background: #1e3c72;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9fafc;
+        }
+
+        table tr:hover {
+            background: #fff8dc;
+        }
+
+        /* ========== PENTING UJIAN ========== */
+        .poin-penting {
+            background: #fff8dc;
+            border: 2px dashed #ffd700;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .poin-penting h4 {
+            color: #1e3c72;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .poin-penting ul {
+            margin-left: 20px;
+        }
+
+        /* ========== STRUKTUR VISUAL ========== */
+        .struktur-visual {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .struktur-item {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+        }
+
+        .struktur-item h4 {
+            color: #ffd700;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .struktur-item p {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        /* ========== NAVIGASI BAWAH ========== */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .bottom-nav a {
+            background: #1e3c72;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary:hover {
+            background: #1e3c72;
+            color: #ffd700;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0f1e3d;
+            color: #fff;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-content h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content p,
+        .footer-content a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-content a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .bab-hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .content article {
+                padding: 25px 20px;
+            }
+
+            .content h3 {
+                font-size: 1.25rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            table th, table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER & BREADCRUMB ========== -->
+    <header>
+        <h1><a href="index.html">Buku Bahasa Indonesia Kelas 9</a></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#bab">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#penulis">Penulis</a>
+        </div>
+    </header>
+
+    <!-- ========== HERO BAB ========== -->
+    <section class="bab-hero">
+        <span class="label">BAB 2</span>
+        <h2>Teks Eksposisi</h2>
+        <p>Memahami struktur, kaidah kebahasaan, dan cara menyusun teks eksposisi yang baik. Melatih kemampuan berpikir kritis dan menyampaikan pendapat secara logis dan sistematis.</p>
+        <div class="bab-nav">
+            <a href="index.html">🏠 Beranda</a>
+            <a href="uji-formatif-2.html">📝 Uji Formatif Bab 2</a>
+            <a href="3.html">Bab Selanjutnya →</a>
+        </div>
+    </section>
+
+    <!-- ========== KONTEN UTAMA ========== -->
+    <div class="content">
+        <article>
+
+            <!-- A. Pengertian Teks Eksposisi -->
+            <h3>A. Pengertian Teks Eksposisi</h3>
+            <p>Teks eksposisi adalah teks yang berisi gagasan, pendapat, atau argumen yang bertujuan untuk menjelaskan, memaparkan, menyampaikan informasi, atau meyakinkan pembaca tentang suatu topik tertentu. Teks ini bersifat <strong>informatif</strong> dan <strong>argumentatif</strong>, sehingga pembaca diharapkan memperoleh pengetahuan tambahan atau berubah pandangannya setelah membaca teks tersebut.</p>
+
+            <p>Kata "eksposisi" berasal dari bahasa Latin <em>expositio</em> yang berarti "pemaparan" atau "penjelasan". Dalam kehidupan sehari-hari, teks eksposisi sering kita jumpai dalam bentuk artikel opini di surat kabar, tajuk rencana, esai, editorial, serta tulisan-tulisan ilmiah populer.</p>
+
+            <div class="definisi">
+                <strong>Teks Eksposisi</strong> adalah teks yang berisi gagasan atau pendapat penulis tentang suatu permasalahan yang disampaikan dengan tujuan untuk menjelaskan, memaparkan informasi, atau meyakinkan pembaca, disertai dengan bukti-bukti dan argumen yang logis.
+            </div>
+
+            <h4>Definisi Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Keraf (2004):</strong> Eksposisi adalah bentuk wacana yang bertujuan menyampaikan gagasan atau penjelasan dengan maksud untuk memperluas pengetahuan pembaca.</li>
+                <li><strong>Tarigan (2008):</strong> Eksposisi adalah karangan yang bermaksud untuk menjelaskan, memberikan keterangan, dan memberikan informasi kepada pembaca.</li>
+                <li><strong>Akhadiah (2001):</strong> Eksposisi adalah karangan yang berisi uraian atau penjelasan tentang suatu topik dengan tujuan memberikan informasi dan memperluas pengetahuan pembaca.</li>
+            </ul>
+
+            <h4>Ciri-Ciri Teks Eksposisi:</h4>
+            <ol>
+                <li><strong>Bersifat informatif</strong> — berisi informasi yang jelas dan faktual.</li>
+                <li><strong>Bersifat netral</strong> — tidak memihak, meskipun berisi pendapat.</li>
+                <li><strong>Bersifat objektif</strong> — berdasarkan fakta dan data yang dapat dipertanggungjawabkan.</li>
+                <li><strong>Bahasa yang digunakan bersifat ilmiah/ilmiah populer</strong> — lugas, jelas, dan mudah dipahami.</li>
+                <li><strong>Memiliki struktur yang jelas</strong> — tesis, argumen, dan penegasan ulang.</li>
+                <li><strong>Dilengkapi data dan fakta</strong> — sebagai penguat argumen.</li>
+            </ol>
+
+            <!-- B. Struktur Teks Eksposisi -->
+            <h3>B. Struktur Teks Eksposisi</h3>
+            <p>Teks eksposisi memiliki tiga bagian utama yang saling berkaitan. Ketiga bagian ini membentuk kesatuan yang utuh sehingga gagasan dapat tersampaikan dengan sistematis dan logis.</p>
+
+            <div class="struktur-visual">
+                <div class="struktur-item">
+                    <h4>1. TESIS (Pernyataan Pendapat)</h4>
+                    <p>Bagian pembuka yang berisi pernyataan pendapat atau pendapat umum penulis tentang permasalahan yang akan dibahas. Tesis biasanya berupa pengantar yang menjelaskan topik dan sudut pandang penulis. Bagian ini juga disebut <em>pengenalan isu</em> atau <em>pernyataan pendapat umum</em>.</p>
+                </div>
+                <div class="struktur-item">
+                    <h4>2. ARGUMEN (Argumentasi)</h4>
+                    <p>Bagian inti yang berisi alasan logis, bukti, data, fakta, pernyataan ahli, atau hasil penelitian yang mendukung tesis. Argumen menjadi dasar penguat agar pendapat penulis dapat diterima oleh pembaca. Semakin kuat argumen, semakin meyakinkan teks tersebut.</p>
+                </div>
+                <div class="struktur-item">
+                    <h4>3. PENEGASAN ULANG (Reorientasi)</h4>
+                    <p>Bagian penutup yang berisi kesimpulan, ringkasan, atau penegasan kembali atas pendapat yang telah disampaikan. Bagian ini dapat juga berisi rekomendasi atau saran dari penulis terhadap permasalahan yang dibahas.</p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Struktur</th>
+                        <th>Isi</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tesis</strong></td>
+                        <td>Pernyataan pendapat penulis</td>
+                        <td>Mengenalkan topik dan sudut pandang</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumen</strong></td>
+                        <td>Alasan, bukti, data, fakta</td>
+                        <td>Menguatkan dan mendukung tesis</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penegasan Ulang</strong></td>
+                        <td>Kesimpulan/rekomendasi</td>
+                        <td>Menegaskan kembali pendapat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- C. Kaidah Kebahasaan -->
+            <h3>C. Kaidah Kebahasaan Teks Eksposisi</h3>
+            <p>Teks eksposisi memiliki ciri kebahasaan khas yang membedakannya dari jenis teks lainnya. Berikut adalah kaidah-kaidah kebahasaan yang sering digunakan dalam teks eksposisi:</p>
+
+            <h4>1. Pronomina (Kata Ganti)</h4>
+            <p>Pronomina adalah kata yang digunakan untuk merujuk pada orang atau benda. Dalam teks eksposisi, pronomina digunakan untuk merujuk pada pihak-pihak yang terlibat dalam permasalahan.</p>
+            <ul>
+                <li><strong>Pronomina persona (kata ganti orang):</strong> saya, kami, kita, Anda, mereka, beliau.</li>
+                <li><strong>Pronomina nonpersona (kata ganti bukan orang):</strong> ini, itu, tersebut, di sini, di sana.</li>
+            </ul>
+
+            <h4>2. Konjungsi (Kata Hubung)</h4>
+            <p>Konjungsi digunakan untuk menghubungkan antarkata, antarfrasa, antarklausa, atau antarkalimat. Konjungsi sangat penting dalam teks eksposisi untuk membangun argumen yang logis.</p>
+            <ul>
+                <li><strong>Konjungsi temporal:</strong> kemudian, lalu, setelah itu, berikutnya, akhirnya.</li>
+                <li><strong>Konjungsi kausalitas:</strong> karena, sebab, oleh karena itu, akibatnya, sehingga.</li>
+                <li><strong>Konjungsi adversatif:</strong> tetapi, namun, meskipun, walaupun, sebaliknya.</li>
+                <li><strong>Konjungsi aditif:</strong> dan, serta, di samping itu, selain itu.</li>
+            </ul>
+
+            <h4>3. Kata Leksikal</h4>
+            <p>Kata leksikal adalah kata-kata yang memiliki makna dasar tertentu. Dalam teks eksposisi, kata leksikal yang sering digunakan adalah:</p>
+            <ul>
+                <li><strong>Nomina (kata benda):</strong> pendidikan, lingkungan, kesehatan, ekonomi.</li>
+                <li><strong>Verba (kata kerja):</strong> menganalisis, membuktikan, menunjukkan, menyatakan.</li>
+                <li><strong>Adjektiva (kata sifat):</strong> penting, signifikan, efektif, bermanfaat.</li>
+                <li><strong>Adverbia (kata keterangan):</strong> sangat, cukup, hampir, biasanya.</li>
+            </ul>
+
+            <h4>4. Kalimat Fakta dan Kalimat Opini</h4>
+            <ul>
+                <li><strong>Kalimat fakta:</strong> kalimat yang menyatakan peristiwa atau keadaan yang benar-benar terjadi dan dapat dibuktikan kebenarannya. Contoh: <em>"Indonesia merupakan negara kepulauan terbesar di dunia."</em></li>
+                <li><strong>Kalimat opini:</strong> kalimat yang berisi pendapat, pemikiran, atau perkiraan seseorang yang belum tentu kebenarannya. Contoh: <em>"Menurut saya, pendidikan karakter sangat penting diterapkan di sekolah."</em></li>
+            </ul>
+
+            <div class="info-box">
+                <h4>💡 Tips Membedakan Fakta dan Opini</h4>
+                <ul>
+                    <li><strong>Fakta:</strong> bersifat objektif, dapat diverifikasi, biasanya disertai data angka, waktu, atau tempat yang jelas.</li>
+                    <li><strong>Opini:</strong> bersifat subjektif, sering menggunakan kata <em>menurut saya, seharusnya, mungkin, sebaiknya, sebaiknya, sangat, paling</em>.</li>
+                </ul>
+            </div>
+
+            <!-- D. Jenis-Jenis Teks Eksposisi -->
+            <h3>D. Jenis-Jenis Teks Eksposisi</h3>
+            <p>Teks eksposisi dapat dibedakan menjadi beberapa jenis berdasarkan cara pemaparan dan tujuannya:</p>
+
+            <h4>1. Eksposisi Ilustrasi</h4>
+            <p>Teks eksposisi yang menguraikan suatu topik dengan memberikan gambaran atau ilustrasi yang jelas tentang suatu permasalahan. Tujuannya agar pembaca memahami topik secara lebih mendalam.</p>
+
+            <h4>2. Eksposisi Berita (News Exposition)</h4>
+            <p>Teks eksposisi yang berisi pemberitaan tentang suatu peristiwa atau kejadian. Biasanya ditemukan di surat kabar, portal berita, atau media massa lainnya. Sering disebut juga sebagai <em>teks berita</em>.</p>
+
+            <h4>3. Eksposisi Analisis</h4>
+            <p>Teks eksposisi yang menguraikan suatu topik dengan cara menganalisis fakta-fakta yang ada. Tujuannya untuk memberikan pemahaman yang mendalam tentang suatu permasalahan.</p>
+
+            <h4>4. Eksposisi Perbandingan</h4>
+            <p>Teks eksposisi yang menyajikan gagasan dengan cara membandingkan dua hal atau lebih. Tujuannya untuk menunjukkan perbedaan atau persamaan antara dua hal tersebut.</p>
+
+            <h4>5. Eksposisi Klasifikasi</h4>
+            <p>Teks eksposisi yang mengelompokkan sesuatu berdasarkan kategori atau kelas tertentu. Tujuannya untuk memudahkan pembaca memahami suatu topik secara sistematis.</p>
+
+            <h4>6. Eksposisi Pertentangan</h4>
+            <p>Teks eksposisi yang berisi pertentangan terhadap suatu hal atau pandangan yang sudah ada. Tujuannya untuk memberikan sudut pandang alternatif.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Eksposisi</th>
+                        <th>Ciri Utama</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ilustrasi</td>
+                        <td>Memberikan gambaran</td>
+                        <td>"Pentingnya Sarapan bagi Siswa"</td>
+                    </tr>
+                    <tr>
+                        <td>Berita</td>
+                        <td>Menyajikan peristiwa</td>
+                        <td>Artikel berita di media</td>
+                    </tr>
+                    <tr>
+                        <td>Analisis</td>
+                        <td>Menganalisis fakta</td>
+                        <td>"Analisis Dampak Gadget pada Remaja"</td>
+                    </tr>
+                    <tr>
+                        <td>Perbandingan</td>
+                        <td>Membandingkan dua hal</td>
+                        <td>"Perbedaan Sekolah Umum dan Madrasah"</td>
+                    </tr>
+                    <tr>
+                        <td>Klasifikasi</td>
+                        <td>Mengelompokkan</td>
+                        <td>"Jenis-Jenis Sampah di Sekolah"</td>
+                    </tr>
+                    <tr>
+                        <td>Pertentangan</td>
+                        <td>Menentang pandangan</td>
+                        <td>"Ujian Nasional Tidak Efektif"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- E. Contoh Teks Eksposisi -->
+            <h3>E. Contoh Teks Eksposisi</h3>
+
+            <div class="contoh-teks">
+                <h4>📝 Contoh Teks Eksposisi</h4>
+                <div class="judul-teks">PENTINGNYA MEMBACA BAGI SISWA</div>
+
+                <p><span class="struktur-label">TESIS</span>
+                Membaca merupakan kegiatan yang sangat penting bagi siswa, khususnya siswa MTs. Kegiatan membaca tidak hanya menambah wawasan, tetapi juga melatih kemampuan berpikir kritis dan memperluas kosakata. Sayangnya, minat baca siswa di Indonesia masih tergolong rendah dibandingkan negara-negara lain.</p>
+
+                <p><span class="struktur-label">ARGUMEN</span>
+                Berdasarkan survei <em>Programme for International Student Assessment</em> (PISA) tahun 2022, kemampuan literasi membaca siswa Indonesia masih berada di peringkat bawah. Hal ini menunjukkan bahwa budaya membaca di kalangan pelajar perlu ditingkatkan secara serius.</p>
+
+                <p>Membaca memiliki banyak manfaat. Pertama, membaca memperluas pengetahuan dan wawasan tentang berbagai bidang ilmu. Kedua, membaca melatih konsentrasi dan daya ingat. Ketiga, membaca meningkatkan kemampuan menulis karena dengan banyak membaca, siswa akan terbiasa dengan struktur kalimat yang baik. Keempat, membaca menumbuhkan empati dan kepekaan sosial melalui cerita-cerita yang dibaca.</p>
+
+                <p>Di era digital saat ini, membaca tidak hanya terbatas pada buku cetak. Siswa dapat membaca melalui artikel daring, e-book, jurnal elektronik, dan berbagai sumber informasi lainnya. Namun, yang terpenting adalah kemampuan memilah informasi yang benar dan bermanfaat.</p>
+
+                <p><span class="struktur-label">PENEGASAN ULANG</span>
+                Dengan demikian, membaca merupakan kegiatan yang tidak dapat dipisahkan dari kehidupan seorang siswa. Untuk meningkatkan minat baca, diperlukan kerja sama antara sekolah, orang tua, dan masyarakat. Sekolah dapat menyediakan perpustakaan yang nyaman, orang tua dapat membiasakan membaca di rumah, dan masyarakat dapat mendukung gerakan literasi nasional.</p>
+            </div>
+
+            <!-- F. Cara Menulis Teks Eksposisi -->
+            <h3>F. Cara Menulis Teks Eksposisi</h3>
+            <p>Menulis teks eksposisi memerlukan langkah-langkah sistematis agar tulisan dapat tersusun dengan baik dan mudah dipahami. Berikut adalah tahapan menulis teks eksposisi:</p>
+
+            <h4>Langkah 1: Menentukan Tema</h4>
+            <p>Pilihlah tema yang dikuasai dan menarik untuk dibahas. Tema sebaiknya relevan dengan kehidupan sehari-hari siswa, seperti pendidikan, lingkungan, kesehatan, atau teknologi.</p>
+
+            <h4>Langkah 2: Menentukan Judul</h4>
+            <p>Buatlah judul yang singkat, menarik, dan mencerminkan isi tulisan. Judul yang baik akan memancing minat pembaca untuk membaca lebih lanjut.</p>
+
+            <h4>Langkah 3: Mengumpulkan Bahan/Materi</h4>
+            <p>Kumpulkan informasi dari berbagai sumber yang dapat dipercaya, seperti buku, artikel ilmiah, jurnal, atau sumber daring yang valid. Catatlah fakta, data, dan pendapat ahli yang relevan.</p>
+
+            <h4>Langkah 4: Menyusun Kerangka Karangan</h4>
+            <p>Buatlah kerangka karangan berdasarkan struktur teks eksposisi:</p>
+            <ul>
+                <li>Tesis: Apa pendapat utama yang akan disampaikan?</li>
+                <li>Argumen: Apa saja bukti, data, dan alasan yang mendukung?</li>
+                <li>Penegasan ulang: Bagaimana kesimpulan atau rekomendasi?</li>
+            </ul>
+
+            <h4>Langkah 5: Mengembangkan Kerangka Menjadi Teks Utuh</h4>
+            <p>Kembangkan setiap bagian kerangka menjadi paragraf yang utuh. Gunakan bahasa yang jelas, logis, dan sesuai kaidah bahasa Indonesia baku.</p>
+
+            <h4>Langkah 6: Menyunting Tulisan</h4>
+            <p>Baca kembali tulisan yang telah dibuat. Perbaiki kesalahan ejaan, tata bahasa, struktur kalimat, dan kesesuaian isi. Pastikan tulisan sudah memenuhi kaidah teks eksposisi.</p>
+
+            <div class="info-box">
+                <h4>📝 Tips Menulis Teks Eksposisi yang Baik</h4>
+                <ul>
+                    <li>Gunakan data dan fakta yang valid serta dapat dipertanggungjawabkan.</li>
+                    <li>Hindari penggunaan bahasa yang bersifat emosional atau subjektif berlebihan.</li>
+                    <li>Perhatikan koherensi dan kohesi antarkalimat serta antarparagraf.</li>
+                    <li>Gunakan konjungsi yang tepat untuk membangun alur logika.</li>
+                    <li>Sertakan sumber rujukan jika mengutip pendapat ahli.</li>
+                    <li>Baca ulang tulisan untuk memastikan tidak ada kesalahan.</li>
+                </ul>
+            </div>
+
+            <!-- G. Relevansi Teks Eksposisi bagi Siswa MTs -->
+            <h3>G. Relevansi Teks Eksposisi bagi Siswa MTs</h3>
+            <p>Penguasaan teks eksposisi memiliki nilai yang sangat penting bagi siswa MTs kelas 9, baik untuk kepentingan akademik maupun kehidupan sehari-hari. Berikut beberapa alasan mengapa teks eksposisi sangat relevan bagi siswa MTs:</p>
+
+            <ol>
+                <li><strong>Melatih berpikir kritis dan logis</strong> — teks eksposisi melatih siswa menyusun argumen yang runtut dan berbasis bukti.</li>
+                <li><strong>Meningkatkan kemampuan menulis</strong> — siswa terbiasa menulis tulisan yang sistematis dan informatif.</li>
+                <li><strong>Menunjang prestasi akademik</strong> — banyak tugas sekolah yang menuntut kemampuan menulis teks eksposisi, seperti makalah, esai, dan laporan.</li>
+                <li><strong>Persiapan ujian</strong> — soal-soal UN dan asesmen kompetensi sering memuat teks eksposisi.</li>
+                <li><strong>Melestarikan nilai-nilai keislaman</strong> — siswa dapat menulis teks eksposisi tentang tema-tema keislaman, seperti pentingnya menuntut ilmu, akhlak mulia, atau menjaga lingkungan.</li>
+                <li><strong>Membangun literasi digital</strong> — di era digital, siswa mampu menyaring informasi dan menulis konten yang bermanfaat.</li>
+            </ol>
+
+            <p>Dalam konteks pendidikan Islam, teks eksposisi juga dapat digunakan untuk menyampaikan dakwah, menulis artikel keagamaan, atau menyusun opini tentang isu-isu kontemporer dari sudut pandang Islam. Hal ini sejalan dengan tujuan pendidikan MTs yang tidak hanya mengembangkan ilmu umum, tetapi juga ilmu agama.</p>
+
+            <!-- Poin Penting -->
+            <div class="poin-penting">
+                <h4>📌 Poin Penting untuk Ujian</h4>
+                <ul>
+                    <li>Pahami pengertian teks eksposisi menurut para ahli dan ciri-cirinya.</li>
+                    <li>Hafalkan struktur teks eksposisi: tesis, argumen, penegasan ulang.</li>
+                    <li>Kuasai kaidah kebahasaan: pronomina, konjungsi, kata leksikal, fakta-opini.</li>
+                    <li>Mampu membedakan jenis-jenis teks eksposisi.</li>
+                    <li>Pahami langkah-langkah menulis teks eksposisi secara sistematis.</li>
+                    <li>Siapkan contoh teks eksposisi beserta analisis strukturnya.</li>
+                    <li>Latih kemampuan membedakan kalimat fakta dan opini.</li>
+                </ul>
+            </div>
+
+            <!-- Navigasi Bawah -->
+            <div class="bottom-nav">
+                <a href="index.html">🏠 Kembali ke Beranda</a>
+                <a href="uji-formatif-2.html" class="primary">✍️ Uji Formatif Bab 2</a>
+                <a href="3.html">Bab Selanjutnya →</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Buku Bahasa Indonesia Kelas 9</h4>
+                <p>Buku ajar untuk siswa MTs kelas 9. Teori, praktik, dan aplikasi berbahasa Indonesia secara terpadu.</p>
+            </div>
+            <div>
+                <h4>Navigasi</h4>
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div>
+                <h4>Buku</h4>
+                <p>Edisi 2026</p>
+                <p>MTsS Halaban Anda</p>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <a href="mailto:mtshalaban313@gmail.com">mtshalaban313@gmail.com</a>
+                <p>MTsS Halaban Anda</p>
+                <p>Murniati, S.Pd</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Murniati, S.Pd — MTsS Halaban Anda. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

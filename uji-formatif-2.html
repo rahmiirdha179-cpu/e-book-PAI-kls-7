@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 2 - Teks Eksposisi | Buku Bahasa Indonesia Kelas 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* ========== HEADER & BREADCRUMB ========== */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        header h1 a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        header h1 a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero .icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 25px;
+        }
+
+        .hero .info-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            font-size: 0.95rem;
+        }
+
+        .hero .info-bar span {
+            background: rgba(255, 215, 0, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        /* ========== KONTEN ========== */
+        .content {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 50px 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .card h3 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        .materi-info {
+            background: #f4f7fb;
+            border-left: 4px solid #ffd700;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+        }
+
+        /* ========== FORM DATA SISWA ========== */
+        .data-siswa {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .data-siswa h3 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #1e3c72;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        /* ========== SOAL ========== */
+        .soal-section {
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .soal-section h3 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .soal-section .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 18px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 25px;
+            color: #856404;
+            font-size: 0.95rem;
+        }
+
+        .soal-item {
+            background: #f9fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2a5298;
+        }
+
+        .soal-item h4 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .soal-item p.pertanyaan {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            border-color: #2a5298;
+            background: #f4f7fb;
+        }
+
+        .option input {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .essay-item {
+            background: #f9fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .essay-item h4 {
+            color: #1e3c72;
+            margin-bottom: 12px;
+        }
+
+        .essay-item p {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .essay-item textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        .essay-item textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        /* ========== HASIL ========== */
+        .hasil-section {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .hasil-section.show {
+            display: block;
+        }
+
+        .hasil-section h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .hasil-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hasil-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .hasil-item .label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .hasil-item .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .hasil-item .max {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-submit {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 40px;
+            font-size: 1.05rem;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .btn-submit:hover {
+            background: #1e3c72;
+            color: #ffd700;
+            border: 2px solid #ffd700;
+        }
+
+        /* ========== NAVIGASI BAWAH ========== */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .bottom-nav a {
+            background: #1e3c72;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .bottom-nav a:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary:hover {
+            background: #1e3c72;
+            color: #ffd700;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0f1e3d;
+            color: #fff;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-content h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content p,
+        .footer-content a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-content a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .card, .soal-section, .data-siswa {
+                padding: 25px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .options {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-nav a {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER & BREADCRUMB ========== -->
+    <header>
+        <h1><a href="index.html">Buku Bahasa Indonesia Kelas 9</a></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#bab">Daftar Bab</a>
+            <span>|</span>
+            <a href="2.html">Materi Bab 2</a>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="icon">📋</div>
+        <h2>Uji Formatif Bab 2</h2>
+        <p class="subtitle">Teks Eksposisi</p>
+        <div class="info-bar">
+            <span>📋 Bagian A: Pilihan Ganda (10 soal, skor 10/soal)</span>
+            <span>✍️ Bagian B: Essay (5 soal, skor 20/soal)</span>
+        </div>
+        <div class="info-bar">
+            <span>📖 Materi: Pengertian teks eksposisi, struktur, kaidah kebahasaan, jenis, contoh, dan cara menulis teks eksposisi</span>
+        </div>
+        <div class="info-bar">
+            <span>⏱️ Waktu: Tidak terbatas</span>
+            <span>🏆 Total Skor: 200 poin</span>
+        </div>
+    </section>
+
+    <!-- ========== KONTEN ========== -->
+    <div class="content">
+
+        <!-- Data Siswa -->
+        <div class="data-siswa">
+            <h3>📋 Data Siswa</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                </div>
+                <div class="form-group">
+                    <label>NIS <span class="required">*</span></label>
+                    <input type="text" id="nis" placeholder="Masukkan NIS" required>
+                </div>
+                <div class="form-group">
+                    <label>📅 Tanggal Ujian</label>
+                    <input type="date" id="tanggal">
+                </div>
+                <div class="form-group">
+                    <label>Kelas</label>
+                    <select id="kelas">
+                        <option value="">Pilih Kelas</option>
+                        <option value="9A">Kelas 9A</option>
+                        <option value="9B">Kelas 9B</option>
+                        <option value="9C">Kelas 9C</option>
+                        <option value="9D">Kelas 9D</option>
+                        <option value="9E">Kelas 9E</option>
+                    </select>
+                </div>
+                <div class="form-group full">
+                    <label>Madrasah</label>
+                    <input type="text" id="madrasah" value="MTsS Halaban Anda" readonly>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian A: Pilihan Ganda -->
+        <div class="soal-section">
+            <h3>📋 Bagian A – Pilihan Ganda</h3>
+            <div class="warning">
+                ⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.
+            </div>
+
+            <!-- Soal 1 -->
+            <div class="soal-item">
+                <h4>Soal 1</h4>
+                <p class="pertanyaan">Teks eksposisi adalah teks yang bertujuan untuk...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal1" id="s1a" value="a">
+                        <label for="s1a">a) Menghibur pembaca dengan cerita fiksi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal1" id="s1b" value="b">
+                        <label for="s1b">b) Menjelaskan, memaparkan, dan meyakinkan pembaca</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal1" id="s1c" value="c">
+                        <label for="s1c">c) Menggambarkan suatu objek secara rinci</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal1" id="s1d" value="d">
+                        <label for="s1d">d) Menceritakan pengalaman pribadi secara kronologis</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="soal-item">
+                <h4>Soal 2</h4>
+                <p class="pertanyaan">Struktur teks eksposisi yang benar adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal2" id="s2a" value="a">
+                        <label for="s2a">a) Orientasi – Komplikasi – Resolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal2" id="s2b" value="b">
+                        <label for="s2b">b) Tesis – Argumen – Penegasan Ulang</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal2" id="s2c" value="c">
+                        <label for="s2c">c) Pernyataan umum – Deretan penjelasan – Simpulan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal2" id="s2d" value="d">
+                        <label for="s2d">d) Pengenalan isu – Puncak konflik – Penyelesaian</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="soal-item">
+                <h4>Soal 3</h4>
+                <p class="pertanyaan">Bagian teks eksposisi yang berisi alasan logis, bukti, data, dan fakta untuk mendukung tesis disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal3" id="s3a" value="a">
+                        <label for="s3a">a) Tesis</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal3" id="s3b" value="b">
+                        <label for="s3b">b) Penegasan ulang</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal3" id="s3c" value="c">
+                        <label for="s3c">c) Argumen</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal3" id="s3d" value="d">
+                        <label for="s3d">d) Orientasi</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="soal-item">
+                <h4>Soal 4</h4>
+                <p class="pertanyaan">Kalimat berikut yang merupakan kalimat <strong>fakta</strong> adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal4" id="s4a" value="a">
+                        <label for="s4a">a) Menurut saya, membaca sangat bermanfaat bagi siswa.</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal4" id="s4b" value="b">
+                        <label for="s4b">b) Sebaiknya siswa rajin berolahraga setiap pagi.</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal4" id="s4c" value="c">
+                        <label for="s4c">c) Indonesia merupakan negara kepulauan terbesar di dunia.</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal4" id="s4d" value="d">
+                        <label for="s4d">d) Mungkin besok akan turun hujan deras.</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="soal-item">
+                <h4>Soal 5</h4>
+                <p class="pertanyaan">Kata "karena", "oleh sebab itu", dan "akibatnya" termasuk jenis konjungsi...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal5" id="s5a" value="a">
+                        <label for="s5a">a) Temporal</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal5" id="s5b" value="b">
+                        <label for="s5b">b) Kausalitas</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal5" id="s5c" value="c">
+                        <label for="s5c">c) Adversatif</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal5" id="s5d" value="d">
+                        <label for="s5d">d) Aditif</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="soal-item">
+                <h4>Soal 6</h4>
+                <p class="pertanyaan">Teks eksposisi yang menyajikan gagasan dengan cara membandingkan dua hal atau lebih disebut eksposisi...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal6" id="s6a" value="a">
+                        <label for="s6a">a) Ilustrasi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal6" id="s6b" value="b">
+                        <label for="s6b">b) Analisis</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal6" id="s6c" value="c">
+                        <label for="s6c">c) Perbandingan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal6" id="s6d" value="d">
+                        <label for="s6d">d) Klasifikasi</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="soal-item">
+                <h4>Soal 7</h4>
+                <p class="pertanyaan">Ciri kebahasaan teks eksposisi yang <strong>bukan</strong> termasuk adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal7" id="s7a" value="a">
+                        <label for="s7a">a) Menggunakan pronomina</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal7" id="s7b" value="b">
+                        <label for="s7b">b) Menggunakan konjungsi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal7" id="s7c" value="c">
+                        <label for="s7c">c) Menggunakan majas hiperbola berlebihan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal7" id="s7d" value="d">
+                        <label for="s7d">d) Menggunakan kalimat fakta dan opini</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="soal-item">
+                <h4>Soal 8</h4>
+                <p class="pertanyaan">Langkah pertama dalam menulis teks eksposisi adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal8" id="s8a" value="a">
+                        <label for="s8a">a) Menyusun kerangka karangan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal8" id="s8b" value="b">
+                        <label for="s8b">b) Menentukan tema</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal8" id="s8c" value="c">
+                        <label for="s8c">c) Menyunting tulisan</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal8" id="s8d" value="d">
+                        <label for="s8d">d) Mengumpulkan data</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="soal-item">
+                <h4>Soal 9</h4>
+                <p class="pertanyaan">Kata "pendidikan", "lingkungan", dan "kesehatan" termasuk jenis kata...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal9" id="s9a" value="a">
+                        <label for="s9a">a) Verba (kata kerja)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal9" id="s9b" value="b">
+                        <label for="s9b">b) Adjektiva (kata sifat)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal9" id="s9c" value="c">
+                        <label for="s9c">c) Nomina (kata benda)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal9" id="s9d" value="d">
+                        <label for="s9d">d) Adverbia (kata keterangan)</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="soal-item">
+                <h4>Soal 10</h4>
+                <p class="pertanyaan">Bagian penutup teks eksposisi yang berisi kesimpulan atau rekomendasi disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="soal10" id="s10a" value="a">
+                        <label for="s10a">a) Tesis</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal10" id="s10b" value="b">
+                        <label for="s10b">b) Argumen</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal10" id="s10c" value="c">
+                        <label for="s10c">c) Penegasan ulang</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="soal10" id="s10d" value="d">
+                        <label for="s10d">d) Orientasi</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian B: Essay -->
+        <div class="soal-section">
+            <h3>✍️ Bagian B – Essay</h3>
+            <div class="warning">
+                ⚠️ Isi Nama Lengkap dan NIS terlebih dahulu! Setiap soal essay bernilai 20 poin.
+            </div>
+
+            <!-- Essay 1 -->
+            <div class="essay-item">
+                <h4>Soal Essay 1</h4>
+                <p>Jelaskan pengertian teks eksposisi menurut pendapatmu sendiri, serta sebutkan enam ciri-ciri utama teks eksposisi!</p>
+                <textarea placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <!-- Essay 2 -->
+            <div class="essay-item">
+                <h4>Soal Essay 2</h4>
+                <p>Sebutkan dan jelaskan tiga struktur utama teks eksposisi, beserta fungsi masing-masing struktur tersebut!</p>
+                <textarea placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <!-- Essay 3 -->
+            <div class="essay-item">
+                <h4>Soal Essay 3</h4>
+                <p>Sebutkan empat jenis konjungsi yang sering digunakan dalam teks eksposisi, beserta masing-masing dua contoh kata!</p>
+                <textarea placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <!-- Essay 4 -->
+            <div class="essay-item">
+                <h4>Soal Essay 4</h4>
+                <p>Buatlah masing-masing dua contoh kalimat fakta dan dua contoh kalimat opini tentang tema "Pentingnya Menjaga Kebersihan Lingkungan Madrasah"!</p>
+                <textarea placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+
+            <!-- Essay 5 -->
+            <div class="essay-item">
+                <h4>Soal Essay 5</h4>
+                <p>Uraikan langkah-langkah menulis teks eksposisi secara sistematis, serta jelaskan mengapa penguasaan teks eksposisi penting bagi siswa MTs kelas 9!</p>
+                <textarea placeholder="Tulis jawaban Anda di sini..."></textarea>
+            </div>
+        </div>
+
+        <!-- Hasil -->
+        <div class="hasil-section" id="hasil">
+            <h3>📊 Hasil Uji Formatif</h3>
+            <p style="text-align: center; margin-bottom: 25px;">Terima kasih telah menyelesaikan uji formatif ini!</p>
+            <div class="hasil-grid">
+                <div class="hasil-item">
+                    <div class="label">Skor Pilihan Ganda</div>
+                    <div class="value" id="skorPG">0</div>
+                    <div class="max">/100</div>
+                </div>
+                <div class="hasil-item">
+                    <div class="label">Skor Essay</div>
+                    <div class="value" id="skorEssay">0</div>
+                    <div class="max">/100</div>
+                </div>
+                <div class="hasil-item">
+                    <div class="label">Skor Total</div>
+                    <div class="value" id="skorTotal">0</div>
+                    <div class="max">/200</div>
+                </div>
+                <div class="hasil-item">
+                    <div class="label">Nilai Akhir</div>
+                    <div class="value" id="nilaiAkhir">0</div>
+                    <div class="max">/100</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="kirimJawaban()">✉️ KIRIM JAWABAN & LIHAT HASIL</button>
+                <button class="btn btn-secondary" onclick="unduhPDF()">📥 UNDUH PDF LENGKAP</button>
+                <button class="btn btn-secondary" onclick="unduhSkor()">📊 UNDUH SKOR SAJA</button>
+                <button class="btn btn-secondary" onclick="kirimEmail()">✉️ Kirim Email Guru</button>
+                <button class="btn btn-secondary" onclick="mulaiUlang()">🔄 MULAI ULANG</button>
+            </div>
+        </div>
+
+        <!-- Tombol Submit -->
+        <button class="btn btn-submit" onclick="hitungSkor()">📝 HITUNG SKOR & LIHAT HASIL</button>
+
+        <!-- Navigasi Bawah -->
+        <div class="bottom-nav">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <a href="2.html" class="primary">📖 Kembali ke Materi Bab 2</a>
+            <a href="3.html">Lanjut ke Materi Bab 3 →</a>
+        </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Buku Bahasa Indonesia Kelas 9</h4>
+                <p>Buku ajar untuk siswa MTs kelas 9. Teori, praktik, dan aplikasi berbahasa Indonesia secara terpadu.</p>
+            </div>
+            <div>
+                <h4>Navigasi</h4>
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div>
+                <h4>Buku</h4>
+                <p>Edisi 2026</p>
+                <p>MTsS Halaban Anda</p>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <a href="mailto:mtshalaban313@gmail.com">mtshalaban313@gmail.com</a>
+                <p>MTsS Halaban Anda</p>
+                <p>Murniati, S.Pd</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Murniati, S.Pd — MTsS Halaban Anda. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Kunci jawaban pilihan ganda
+        const kunciJawaban = {
+            soal1: 'b',   // Menjelaskan, memaparkan, dan meyakinkan pembaca
+            soal2: 'b',   // Tesis – Argumen – Penegasan Ulang
+            soal3: 'c',   // Argumen
+            soal4: 'c',   // Indonesia merupakan negara kepulauan terbesar di dunia
+            soal5: 'b',   // Kausalitas
+            soal6: 'c',   // Perbandingan
+            soal7: 'c',   // Menggunakan majas hiperbola berlebihan
+            soal8: 'b',   // Menentukan tema
+            soal9: 'c',   // Nomina (kata benda)
+            soal10: 'c'   // Penegasan ulang
+        };
+
+        function hitungSkor() {
+            // Validasi data siswa
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+
+            if (!nama || !nis) {
+                alert('⚠️ Mohon lengkapi Nama Lengkap dan NIS terlebih dahulu!');
+                return;
+            }
+
+            // Hitung skor pilihan ganda
+            let skorPG = 0;
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="soal${i}"]:checked`);
+                if (jawaban && jawaban.value === kunciJawaban[`soal${i}`]) {
+                    skorPG += 10;
+                }
+            }
+
+            // Hitung skor essay (berdasarkan panjang jawaban)
+            let skorEssay = 0;
+            const textareas = document.querySelectorAll('textarea');
+            textareas.forEach(ta => {
+                const panjang = ta.value.trim().length;
+                if (panjang > 200) skorEssay += 20;
+                else if (panjang > 100) skorEssay += 15;
+                else if (panjang > 50) skorEssay += 10;
+                else if (panjang > 0) skorEssay += 5;
+            });
+
+            const skorTotal = skorPG + skorEssay;
+            const nilaiAkhir = Math.round((skorTotal / 200) * 100);
+
+            // Tampilkan hasil
+            document.getElementById('skorPG').textContent = skorPG;
+            document.getElementById('skorEssay').textContent = skorEssay;
+            document.getElementById('skorTotal').textContent = skorTotal;
+            document.getElementById('nilaiAkhir').textContent = nilaiAkhir;
+
+            const hasilSection = document.getElementById('hasil');
+            hasilSection.classList.add('show');
+            hasilSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function kirimJawaban() {
+            alert('✅ Jawaban berhasil dikirim! Guru Anda akan segera memeriksa jawaban essay.');
+        }
+
+        function unduhPDF() {
+            alert('📥 Mengunduh PDF lengkap... (Fitur ini akan segera aktif)');
+        }
+
+        function unduhSkor() {
+            alert('📊 Mengunduh skor saja... (Fitur ini akan segera aktif)');
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const skorTotal = document.getElementById('skorTotal').textContent;
+            const subject = `Hasil Uji Formatif Bab 2 - ${nama} (${nis})`;
+            const body = `Nama: ${nama}\nNIS: ${nis}\nKelas: ${document.getElementById('kelas').value}\nSkor Total: ${skorTotal}/200`;
+            window.location.href = `mailto:mtshalaban313@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function mulaiUlang() {
+            if (confirm('🔄 Yakin ingin mengulang uji formatif? Semua jawaban akan dihapus.')) {
+                location.reload();
+            }
+        }
+
+        // Set tanggal hari ini otomatis
+        document.getElementById('tanggal').valueAsDate = new Date();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Bahasa Indonesia Kelas 9 | Murniati, S.Pd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* ========== NAVIGASI ========== */
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* ========== HERO / BERANDA ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ========== COVER BUKU ========== */
+        /* 
+            CARA MENGGANTI COVER BUKU:
+            1. Siapkan file gambar cover buku Anda
+            2. Beri nama file: cover-buku.png
+            3. Letakkan di folder yang sama dengan file index.html ini
+            4. Cover akan otomatis tampil di halaman ini
+        */
+        .book-cover {
+            max-width: 350px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* ========== SECTION UMUM ========== */
+        section {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        section:nth-of-type(even) {
+            background: #f4f7fb;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            color: #1e3c72;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ffd700;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ========== TENTANG BUKU ========== */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+
+        .struktur {
+            background: #1e3c72;
+            color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .struktur h3 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .struktur p {
+            margin: 8px 0;
+        }
+
+        /* ========== DAFTAR BAB ========== */
+        .bab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .bab-card {
+            background: #fff;
+            border-left: 5px solid #ffd700;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .bab-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .bab-card.uts-uas {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            border-left-color: #ffd700;
+        }
+
+        .bab-card.uts-uas h3,
+        .bab-card.uts-uas p {
+            color: #fff;
+        }
+
+        .bab-number {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bab-card h3 {
+            color: #1e3c72;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .bab-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .bab-card a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .bab-card.uts-uas a {
+            color: #ffd700;
+        }
+
+        .bab-card a::after {
+            content: ' →';
+        }
+
+        /* ========== TENTANG PENULIS ========== */
+        .penulis-section {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* 
+            CARA MENGGANTI FOTO PENULIS:
+            1. Siapkan file foto penulis Anda
+            2. Beri nama file: photo-penulis.png
+            3. Letakkan di folder yang sama dengan file index.html ini
+            4. Foto akan otomatis tampil di halaman ini
+        */
+        .photo-penulis {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #ffd700;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .penulis-info h3 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .penulis-info .jabatan {
+            color: #2a5298;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .penulis-info blockquote {
+            border-left: 4px solid #ffd700;
+            padding: 15px 20px;
+            background: #f4f7fb;
+            font-style: italic;
+            margin-top: 20px;
+            color: #555;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* ========== KONTAK ========== */
+        .kontak-box {
+            background: #1e3c72;
+            color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .kontak-box h3 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .kontak-box p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        .kontak-box a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0f1e3d;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.85;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero-content,
+            .penulis-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .photo-penulis {
+                margin: 0 auto;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGASI ========== -->
+    <nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang Buku</a></li>
+            <li><a href="#bab">Daftar Bab</a></li>
+            <li><a href="#penulis">Penulis</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== HERO / BERANDA ========== -->
+    <section class="hero" id="beranda">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">Edisi 2026</span>
+                <h1>Buku Bahasa Indonesia Kelas 9</h1>
+                <p>Buku teks komprehensif untuk peserta didik MTs kelas 9. Membahas keterampilan berbahasa Indonesia secara terpadu: menyimak, membaca, menulis, dan berbicara berbasis teks.</p>
+                <p><strong>Murniati, S.Pd</strong><br>MTsS Halaban Anda</p>
+                <a href="#bab" class="btn">Lihat Daftar Bab</a>
+            </div>
+            <div>
+                <!-- 
+                    =============================================
+                    GAMBAR COVER BUKU
+                    =============================================
+                    Ganti gambar cover dengan cara:
+                    1. Siapkan file gambar cover buku Anda
+                    2. Ubah nama file menjadi: cover-buku.png
+                    3. Letakkan di folder yang sama dengan file ini
+                    4. Refresh halaman, cover akan otomatis muncul
+                    =============================================
+                -->
+                <img src="cover-buku.png" alt="Cover Buku Bahasa Indonesia Kelas 9" class="book-cover" onerror="this.src='https://via.placeholder.com/350x500/1e3c72/ffd700?text=Cover+Buku';">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TENTANG BUKU ========== -->
+    <section id="tentang">
+        <div class="container">
+            <h2 class="section-title">Tentang Buku</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem;">
+                Buku ini dirancang sebagai pegangan utama bagi peserta didik MTs kelas 9 dalam mempelajari Bahasa Indonesia. Buku ini mengintegrasikan penguasaan teori kebahasaan dengan praktik keterampilan berbahasa melalui pendekatan berbasis teks sesuai Kurikulum Merdeka.
+            </p>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">📚</div>
+                    <h3>16 Bab Lengkap</h3>
+                    <p>Dari hakikat bahasa hingga ujian akhir semester</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Berbasis Teks</h3>
+                    <p>Pembelajaran terintegrasi 4 keterampilan berbahasa</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💡</div>
+                    <h3>Kontekstual</h3>
+                    <p>Materi relevan dengan kehidupan sehari-hari siswa MTs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✅</div>
+                    <h3>UTS & UAS</h3>
+                    <p>Evaluasi pembelajaran terstruktur di tengah dan akhir semester</p>
+                </div>
+            </div>
+
+            <div class="struktur">
+                <h3>📖 Struktur Pembahasan</h3>
+                <p>Buku ini disusun secara sistematis dengan pembagian:</p>
+                <p><strong>Bab 1–7:</strong> Landasan Kebahasaan dan Teks (Eksposisi, Ulasan, Persuasi, dll.)</p>
+                <p><strong>Bab 8:</strong> Ujian Tengah Semester (UTS)</p>
+                <p><strong>Bab 9–15:</strong> Pengembangan Keterampilan Berbahasa Lanjutan</p>
+                <p><strong>Bab 16:</strong> Ujian Akhir Semester (UAS)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DAFTAR BAB ========== -->
+    <section id="bab">
+        <div class="container">
+            <h2 class="section-title">Daftar Bab</h2>
+            <p style="text-align: center; margin-bottom: 40px;">
+                Klik pada setiap bab untuk membuka materi lengkap (file .html terpisah). Semua bab akan terbuka di tab baru.
+            </p>
+
+            <div class="bab-grid">
+
+                <div class="bab-card">
+                    <span class="bab-number">1</span>
+                    <h3>Hakikat Bahasa Indonesia dan Keterampilan Berbahasa</h3>
+                    <p>Pengantar fungsi bahasa, kedudukan bahasa Indonesia, dan empat keterampilan berbahasa.</p>
+                    <a href="1.html" target="_blank" rel="noopener">Baca Bab 1</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">2</span>
+                    <h3>Teks Eksposisi</h3>
+                    <p>Struktur, kebahasaan, serta praktik menyimak dan menulis teks eksposisi.</p>
+                    <a href="2.html" target="_blank" rel="noopener">Baca Bab 2</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">3</span>
+                    <h3>Teks Ulasan (Resensi)</h3>
+                    <p>Mengulas karya sastra dan nonfiksi: struktur, kaidah kebahasaan, dan penyusunan resensi.</p>
+                    <a href="3.html" target="_blank" rel="noopener">Baca Bab 3</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">4</span>
+                    <h3>Teks Iklan, Slogan, dan Poster</h3>
+                    <p>Menganalisis dan memproduksi iklan, slogan, serta poster yang persuasif dan kreatif.</p>
+                    <a href="4.html" target="_blank" rel="noopener">Baca Bab 4</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">5</span>
+                    <h3>Teks Persuasi</h3>
+                    <p>Membangun argumen persuasif: struktur, fakta-opini, dan teknik persuasi dalam tulisan.</p>
+                    <a href="5.html" target="_blank" rel="noopener">Baca Bab 5</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">6</span>
+                    <h3>Teks Narasi dan Deskripsi</h3>
+                    <p>Mengembangkan daya imajinasi melalui teks narasi dan deskripsi yang hidup dan menarik.</p>
+                    <a href="6.html" target="_blank" rel="noopener">Baca Bab 6</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">7</span>
+                    <h3>Teks Pidato</h3>
+                    <p>Menyusun dan menyajikan pidato persuasif dengan memperhatikan kaidah kebahasaan.</p>
+                    <a href="7.html" target="_blank" rel="noopener">Baca Bab 7</a>
+                </div>
+
+                <div class="bab-card uts-uas">
+                    <span class="bab-number">8</span>
+                    <h3>Ujian Tengah Semester (UTS)</h3>
+                    <p>Review dan evaluasi materi Bab 1–7.</p>
+                    <a href="8.html" target="_blank" rel="noopener">Buka UTS</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">9</span>
+                    <h3>Teks Diskusi</h3>
+                    <p>Menyampaikan pendapat dan menanggapi isu aktual melalui teks diskusi yang terstruktur.</p>
+                    <a href="9.html" target="_blank" rel="noopener">Baca Bab 9</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">10</span>
+                    <h3>Teks Cerita Inspiratif</h3>
+                    <p>Menghayati dan memproduksi cerita inspiratif dengan struktur naratif yang baik.</p>
+                    <a href="10.html" target="_blank" rel="noopener">Baca Bab 10</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">11</span>
+                    <h3>Teks Debat</h3>
+                    <p>Membangun kemampuan berpikir kritis melalui teknik berdebat yang santun dan logis.</p>
+                    <a href="11.html" target="_blank" rel="noopener">Baca Bab 11</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">12</span>
+                    <h3>Teks Editorial (Tajuk Rencana)</h3>
+                    <p>Menganalisis isu terkini melalui teks editorial dan menulis tajuk rencana yang tajam.</p>
+                    <a href="12.html" target="_blank" rel="noopener">Baca Bab 12</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">13</span>
+                    <h3>Surat Pribadi dan Surat Dinas</h3>
+                    <p>Perbedaan, struktur, dan kaidah kebahasaan surat pribadi serta surat dinas resmi.</p>
+                    <a href="13.html" target="_blank" rel="noopener">Baca Bab 13</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">14</span>
+                    <h3>Menulis Karya Ilmiah Sederhana</h3>
+                    <p>Langkah-langkah menyusun karya ilmiah sederhana: observasi, sistematika, dan penulisan.</p>
+                    <a href="14.html" target="_blank" rel="noopener">Baca Bab 14</a>
+                </div>
+
+                <div class="bab-card">
+                    <span class="bab-number">15</span>
+                    <h3>Apresiasi Sastra Indonesia</h3>
+                    <p>Menelaah dan menciptakan puisi, cerpen, serta drama sebagai wujud apresiasi sastra.</p>
+                    <a href="15.html" target="_blank" rel="noopener">Baca Bab 15</a>
+                </div>
+
+                <div class="bab-card uts-uas">
+                    <span class="bab-number">16</span>
+                    <h3>Ujian Akhir Semester (UAS)</h3>
+                    <p>Review komprehensif seluruh materi semester.</p>
+                    <a href="16.html" target="_blank" rel="noopener">Buka UAS</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TENTANG PENULIS ========== -->
+    <section id="penulis">
+        <div class="container">
+            <h2 class="section-title">Tentang Penulis</h2>
+            <div class="penulis-section">
+                <div>
+                    <!-- 
+                        =============================================
+                        FOTO PENULIS
+                        =============================================
+                        Ganti foto penulis dengan cara:
+                        1. Siapkan file foto penulis Anda
+                        2. Ubah nama file menjadi: photo-penulis.png
+                        3. Letakkan di folder yang sama dengan file ini
+                        4. Refresh halaman, foto akan otomatis muncul
+                        =============================================
+                    -->
+                    <img src="photo-penulis.png" alt="Foto Murniati, S.Pd" class="photo-penulis" onerror="this.src='https://via.placeholder.com/250x250/1e3c72/ffd700?text=Foto+Penulis';">
+                </div>
+                <div class="penulis-info">
+                    <h3>Murniati, S.Pd</h3>
+                    <p class="jabatan">Guru Bahasa Indonesia — MTsS Halaban Anda</p>
+                    <p>
+                        Penulis adalah pendidik aktif di MTsS Halaban Anda dengan fokus pada pengajaran Bahasa Indonesia. Berpengalaman dalam menyusun bahan ajar yang kontekstual dan inovatif, serta aktif membimbing siswa dalam kegiatan literasi, menulis kreatif, dan kompetisi kebahasaan tingkat madrasah.
+                    </p>
+                    <p style="margin-top: 15px;">
+                        Buku ini disusun berdasarkan pengalaman mengajar di kelas serta kebutuhan peserta didik MTs dalam menguasai keterampilan berbahasa Indonesia secara utuh dan menyenangkan.
+                    </p>
+                    <blockquote>
+                        "Bahasa Indonesia adalah jendela bangsa. Menguasainya berarti membuka pintu ilmu, karakter, dan masa depan."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== KONTAK ========== -->
+    <section id="kontak">
+        <div class="container">
+            <h2 class="section-title">Informasi Kontak</h2>
+            <div class="kontak-box">
+                <h3>📬 Hubungi Kami</h3>
+                <p>Untuk informasi lebih lanjut tentang buku ini, silakan hubungi:</p>
+                <p><strong>Email:</strong> <a href="mailto:mtshalaban313@gmail.com">mtshalaban313@gmail.com</a></p>
+                <p><strong>Sekolah:</strong> MTsS Halaban Anda</p>
+                <p><strong>Penulis:</strong> Murniati, S.Pd</p>
+                <p><strong>Tahun Terbit:</strong> 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>© 2026 Murniati, S.Pd — MTsS Halaban Anda</p>
+        <p>Buku Bahasa Indonesia Kelas 9</p>
+        <p style="font-size: 0.85rem; margin-top: 10px;">Hak Cipta Dilindungi</p>
+    </footer>
+
+</body>
+</html>

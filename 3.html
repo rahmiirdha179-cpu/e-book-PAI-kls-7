@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 3 - Teks Ulasan (Resensi) | Buku Bahasa Indonesia Kelas 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* ========== HEADER & BREADCRUMB ========== */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 20px 40px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        header h1 a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        header h1 a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+
+        /* ========== HERO BAB ========== */
+        .bab-hero {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bab-hero .label {
+            display: inline-block;
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .bab-hero h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bab-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .bab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .bab-nav a {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .bab-nav a:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        /* ========== KONTEN UTAMA ========== */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+
+        .content article {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content h3 {
+            color: #1e3c72;
+            font-size: 1.5rem;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .content h3:first-child {
+            margin-top: 0;
+        }
+
+        .content h4 {
+            color: #2a5298;
+            font-size: 1.15rem;
+            margin: 20px 0 10px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .content ul, .content ol {
+            margin: 15px 0 20px 25px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        .content strong {
+            color: #1e3c72;
+        }
+
+        /* ========== KOTAK DEFINISI ========== */
+        .definisi {
+            background: #f4f7fb;
+            border-left: 5px solid #ffd700;
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .definisi strong {
+            font-style: normal;
+            color: #1e3c72;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .info-box h4 {
+            color: #ffd700;
+            margin-top: 0;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .info-box li {
+            margin-bottom: 8px;
+        }
+
+        /* ========== CONTOH TEKS ========== */
+        .contoh-teks {
+            background: #fff8dc;
+            border: 2px dashed #ffd700;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .contoh-teks h4 {
+            color: #1e3c72;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.15rem;
+        }
+
+        .contoh-teks .judul-teks {
+            font-weight: bold;
+            color: #2a5298;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .contoh-teks p {
+            margin-bottom: 12px;
+            font-size: 0.98rem;
+        }
+
+        .struktur-label {
+            display: inline-block;
+            background: #1e3c72;
+            color: #ffd700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* ========== TABEL ========== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        table th {
+            background: #1e3c72;
+            color: #fff;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:nth-child(even) {
+            background: #f9fafc;
+        }
+
+        table tr:hover {
+            background: #fff8dc;
+        }
+
+        /* ========== PENTING UJIAN ========== */
+        .poin-penting {
+            background: #fff8dc;
+            border: 2px dashed #ffd700;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .poin-penting h4 {
+            color: #1e3c72;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .poin-penting ul {
+            margin-left: 20px;
+        }
+
+        /* ========== STRUKTUR VISUAL ========== */
+        .struktur-visual {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .struktur-item {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+        }
+
+        .struktur-item h4 {
+            color: #ffd700;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .struktur-item p {
+            color: #fff;
+            margin-bottom: 0;
+        }
+
+        /* ========== NAVIGASI BAWAH ========== */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .bottom-nav a {
+            background: #1e3c72;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary {
+            background: #ffd700;
+            color: #1e3c72;
+        }
+
+        .bottom-nav a.primary:hover {
+            background: #1e3c72;
+            color: #ffd700;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0f1e3d;
+            color: #fff;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-content h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-content p,
+        .footer-content a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-content a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .bab-hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .content article {
+                padding: 25px 20px;
+            }
+
+            .content h3 {
+                font-size: 1.25rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            table th, table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER & BREADCRUMB ========== -->
+    <header>
+        <h1><a href="index.html">Buku Bahasa Indonesia Kelas 9</a></h1>
+        <div class="breadcrumb">
+            <a href="index.html">Beranda</a>
+            <span>|</span>
+            <a href="index.html#bab">Daftar Bab</a>
+            <span>|</span>
+            <a href="index.html#penulis">Penulis</a>
+        </div>
+    </header>
+
+    <!-- ========== HERO BAB ========== -->
+    <section class="bab-hero">
+        <span class="label">BAB 3</span>
+        <h2>Teks Ulasan (Resensi)</h2>
+        <p>Memahami struktur, kaidah kebahasaan, dan cara menyusun teks ulasan terhadap karya sastra maupun nonfiksi. Melatih kemampuan berpikir kritis dalam menilai kualitas sebuah karya.</p>
+        <div class="bab-nav">
+            <a href="index.html">🏠 Beranda</a>
+            <a href="uji-formatif-3.html">📝 Uji Formatif Bab 3</a>
+            <a href="4.html">Bab Selanjutnya →</a>
+        </div>
+    </section>
+
+    <!-- ========== KONTEN UTAMA ========== -->
+    <div class="content">
+        <article>
+
+            <!-- A. Pengertian Teks Ulasan -->
+            <h3>A. Pengertian Teks Ulasan (Resensi)</h3>
+            <p>Teks ulasan (resensi) adalah teks yang berisi penilaian, pertimbangan, atau ulasan terhadap suatu karya, seperti buku, film, drama, lagu, atau karya seni lainnya. Teks ini menguraikan kualitas karya, kelebihan dan kekurangannya, serta memberikan rekomendasi kepada pembaca apakah karya tersebut layak untuk dinikmati atau tidak.</p>
+
+            <p>Kata "resensi" berasal dari bahasa Latin <em>recensere</em> yang berarti "menilai" atau "menimbang". Dalam bahasa Inggris, resensi dikenal dengan istilah <em>review</em>. Teks ulasan sering dimuat di surat kabar, majalah, jurnal, blog, atau media daring sebagai panduan bagi pembaca dalam memilih karya yang akan mereka baca atau tonton.</p>
+
+            <div class="definisi">
+                <strong>Teks Ulasan (Resensi)</strong> adalah teks yang berisi penilaian terhadap karya sastra, film, drama, atau karya seni lainnya dengan cara menguraikan kualitas karya, memberikan pertimbangan, serta merekomendasikan kepada pembaca apakah karya tersebut layak dinikmati atau tidak.
+            </div>
+
+            <h4>Definisi Menurut Para Ahli:</h4>
+            <ul>
+                <li><strong>Keraf (2004):</strong> Resensi adalah pembicaraan tentang suatu karya (buku, film, drama, dan sebagainya) yang di dalamnya diungkapkan isi, keunggulan, dan kelemahan karya tersebut.</li>
+                <li><strong>Sabaruddin (2007):</strong> Resensi adalah suatu ulasan yang membahas nilai suatu karya (buku, film, drama, dan lain-lain) yang di dalamnya diungkapkan kelebihan dan kekurangan karya tersebut.</li>
+                <li><strong>KBBI:</strong> Resensi adalah pertimbangan atau pembicaraan tentang suatu karya (buku, film, dsb.) yang akan diterbitkan atau telah diterbitkan.</li>
+            </ul>
+
+            <h4>Ciri-Ciri Teks Ulasan:</h4>
+            <ol>
+                <li><strong>Bersifat evaluatif</strong> — berisi penilaian terhadap kualitas karya.</li>
+                <li><strong>Memuat informasi identitas karya</strong> — judul, pengarang, penerbit, tahun terbit, tebal halaman, dll.</li>
+                <li><strong>Memuat sinopsis/ringkasan isi</strong> — gambaran umum tentang isi karya.</li>
+                <li><strong>Menyajikan kelebihan dan kekurangan karya</strong> — penilaian objektif dari berbagai aspek.</li>
+                <li><strong>Memiliki rekomendasi</strong> — saran kepada pembaca tentang kelayakan karya.</li>
+                <li><strong>Berbahasa deskriptif dan interpretatif</strong> — menjelaskan dan menafsirkan makna karya.</li>
+            </ol>
+
+            <!-- B. Tujuan Teks Ulasan -->
+            <h3>B. Tujuan Teks Ulasan</h3>
+            <p>Teks ulasan memiliki beberapa tujuan yang saling berkaitan, antara lain:</p>
+
+            <ol>
+                <li><strong>Memberikan informasi kepada pembaca</strong> — tentang isi, kualitas, dan nilai suatu karya.</li>
+                <li><strong>Membantu pembaca memilih karya</strong> — sebagai panduan dalam memilih buku, film, atau karya lain yang layak dinikmati.</li>
+                <li><strong>Memberikan pertimbangan</strong> — apakah karya tersebut layak dibaca, ditonton, atau diapresiasi.</li>
+                <li><strong>Menguji kualitas karya</strong> — membandingkan karya dengan karya lain yang sejenis atau dengan karya sebelumnya dari pengarang yang sama.</li>
+                <li><strong>Memberikan masukan kepada pengarang</strong> — sebagai bahan evaluasi untuk karya-karya berikutnya.</li>
+                <li><strong>Mengembangkan apresiasi sastra dan seni</strong> — melatih kemampuan menilai karya secara kritis dan objektif.</li>
+            </ol>
+
+            <div class="info-box">
+                <h4>💡 Tahukah Kamu?</h4>
+                <p>Resensi pertama di dunia ditulis oleh para sarjana di Inggris pada abad ke-17 dalam jurnal-jurnal ilmiah. Di Indonesia, tradisi resensi mulai berkembang pada masa kolonial melalui surat kabar dan majalah seperti <em>Pujangga Baru</em> (1933) dan <em>Pandji Pustaka</em>. Tokoh resensi Indonesia yang terkenal antara lain H.B. Jassin, Ajip Rosidi, dan Goenawan Mohamad.</p>
+            </div>
+
+            <!-- C. Struktur Teks Ulasan -->
+            <h3>C. Struktur Teks Ulasan</h3>
+            <p>Teks ulasan memiliki struktur yang sistematis agar penilaian terhadap karya dapat tersampaikan secara utuh dan logis. Struktur teks ulasan terdiri dari tiga bagian utama:</p>
+
+            <div class="struktur-visual">
+                <div class="struktur-item">
+                    <h4>1. EVALUASI</h4>
+                    <p>Bagian pembuka yang berisi penilaian umum terhadap karya. Bagian ini memberikan gambaran awal tentang kualitas karya, apakah baik, cukup, atau kurang baik. Evaluasi juga dapat berisi pernyataan tentang alasan mengapa karya tersebut dipilih untuk diulas.</p>
+                </div>
+                <div class="struktur-item">
+                    <h4>2. DESKRIPSI</h4>
+                    <p>Bagian inti yang berisi uraian rinci tentang isi karya, termasuk sinopsis, tema, alur, tokoh, latar (untuk karya fiksi), atau isi pokok dan sistematika (untuk karya nonfiksi). Bagian ini juga memuat identitas karya (judul, pengarang, penerbit, tahun terbit, tebal halaman, harga, dll.).</p>
+                </div>
+                <div class="struktur-item">
+                    <h4>3. PENAFSIRAN</h4>
+                    <p>Bagian penutup yang berisi interpretasi, pertimbangan, dan rekomendasi penulis terhadap karya. Bagian ini memuat kelebihan dan kekurangan karya, serta saran kepada pembaca apakah karya tersebut layak dinikmati atau tidak. Penafsiran juga dapat berisi pesan moral atau makna yang dapat dipetik dari karya.</p>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Struktur</th>
+                        <th>Isi</th>
+                        <th>Fungsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Evaluasi</strong></td>
+                        <td>Penilaian umum terhadap karya</td>
+                        <td>Memberikan gambaran awal kualitas karya</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deskripsi</strong></td>
+                        <td>Uraian rinci isi karya + identitas</td>
+                        <td>Menjelaskan isi dan detail karya</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penafsiran</strong></td>
+                        <td>Kelebihan, kekurangan, rekomendasi</td>
+                        <td>Memberikan pertimbangan akhir</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- D. Kaidah Kebahasaan -->
+            <h3>D. Kaidah Kebahasaan Teks Ulasan</h3>
+            <p>Teks ulasan memiliki ciri kebahasaan khas yang membedakannya dari jenis teks lainnya. Berikut adalah kaidah-kaidah kebahasaan yang sering digunakan dalam teks ulasan:</p>
+
+            <h4>1. Konjungsi</h4>
+            <p>Konjungsi (kata hubung) digunakan untuk menghubungkan antarkata, antarfrasa, antarklausa, atau antarkalimat. Dalam teks ulasan, konjungsi yang sering digunakan antara lain:</p>
+            <ul>
+                <li><strong>Konjungsi adversatif (pertentangan):</strong> tetapi, namun, meskipun, walaupun, sebaliknya.</li>
+                <li><strong>Konjungsi aditif (penambahan):</strong> dan, serta, di samping itu, selain itu.</li>
+                <li><strong>Konjungsi kausalitas (sebab-akibat):</strong> karena, sebab, oleh karena itu, sehingga.</li>
+            </ul>
+            <p><strong>Contoh:</strong> <em>"Novel ini sangat menarik, <strong>namun</strong> alur ceritanya terlalu lambat di bagian tengah."</em></p>
+
+            <h4>2. Ungkapan Pendapat (Opini)</h4>
+            <p>Teks ulasan banyak menggunakan ungkapan yang menunjukkan pendapat, penilaian, atau pertimbangan penulis. Ungkapan ini bersifat subjektif namun tetap didasarkan pada analisis objektif.</p>
+            <ul>
+                <li>Menurut saya, ...</li>
+                <li>Sejauh penilaian saya, ...</li>
+                <li>Dari sudut pandang ...,</li>
+                <li>Menarik untuk dicermati bahwa ...</li>
+                <li>Karya ini berhasil/gagal dalam ...</li>
+            </ul>
+
+            <h4>3. Kata-Kata Evaluatif</h4>
+            <p>Kata-kata evaluatif digunakan untuk memberikan penilaian terhadap kualitas karya. Kata-kata ini dapat bersifat positif, negatif, atau netral.</p>
+            <ul>
+                <li><strong>Positif:</strong> luar biasa, memukau, mengagumkan, inspiratif, mendalam, brilian, apik.</li>
+                <li><strong>Negatif:</strong> membosankan, klise, dangkal, monoton, kurang menggigit, lemah.</li>
+                <li><strong>Netral:</strong> cukup, sedang, rata-rata, standar.</li>
+            </ul>
+
+            <h4>4. Kata-Kata Deskriptif</h4>
+            <p>Kata-kata deskriptif digunakan untuk menggambarkan ciri-ciri karya secara rinci, baik dari segi isi, gaya bahasa, maupun aspek teknis.</p>
+            <ul>
+                <li><strong>Adjektiva:</strong> menarik, indah, menyentuh, menegangkan, mengharukan.</li>
+                <li><strong>Verba mental:</strong> mengagumkan, memprihatinkan, menggembirakan, menyedihkan.</li>
+            </ul>
+
+            <h4>5. Kalimat Perbandingan</h4>
+            <p>Kalimat perbandingan digunakan untuk membandingkan karya yang diulas dengan karya lain yang sejenis atau dengan karya sebelumnya dari pengarang yang sama.</p>
+            <p><strong>Contoh:</strong> <em>"Dibandingkan dengan novel pertamanya, karya terbaru ini menunjukkan perkembangan yang signifikan dalam kedalaman karakter."</em></p>
+
+            <div class="info-box">
+                <h4>📝 Tips Menulis Ulasan yang Baik</h4>
+                <ul>
+                    <li>Baca/tonton karya secara keseluruhan sebelum mengulas.</li>
+                    <li>Catat poin-poin penting saat membaca/menonton.</li>
+                    <li>Berikan penilaian yang objektif dan berimbang (kelebihan dan kekurangan).</li>
+                    <li>Gunakan bahasa yang jelas, lugas, dan mudah dipahami.</li>
+                    <li>Sertakan identitas karya secara lengkap.</li>
+                    <li>Berikan rekomendasi yang jelas kepada pembaca.</li>
+                </ul>
+            </div>
+
+            <!-- E. Jenis-Jenis Teks Ulasan -->
+            <h3>E. Jenis-Jenis Teks Ulasan</h3>
+            <p>Teks ulasan dapat dibedakan menjadi beberapa jenis berdasarkan objek yang diulas dan bentuk penyajiannya:</p>
+
+            <h4>1. Berdasarkan Objek yang Diulas</h4>
+            <ul>
+                <li><strong>Resensi Buku Fiksi:</strong> mengulas novel, cerpen, kumpulan puisi, drama, dsb.</li>
+                <li><strong>Resensi Buku Nonfiksi:</strong> mengulas buku ilmiah populer, biografi, buku pelajaran, dsb.</li>
+                <li><strong>Resensi Film:</strong> mengulas film bioskop, sinetron, serial, dokumenter, dsb.</li>
+                <li><strong>Resensi Drama/Teater:</strong> mengulas pementasan drama atau teater.</li>
+                <li><strong>Resensi Musik/Lagu:</strong> mengulas album, lagu, atau pertunjukan musik.</li>
+                <li><strong>Resensi Karya Seni:</strong> mengulas lukisan, pameran seni, dsb.</li>
+            </ul>
+
+            <h4>2. Berdasarkan Bentuk Penyajian</h4>
+            <ul>
+                <li><strong>Resensi Informatif:</strong> hanya menyampaikan isi dan gambaran umum karya secara singkat.</li>
+                <li><strong>Resensi Deskriptif:</strong> membahas isi karya secara rinci pada setiap bagian/bab.</li>
+                <li><strong>Resensi Kritis:</strong> mengulas karya secara detail dengan pendekatan ilmu pengetahuan tertentu, biasanya bersifat akademis.</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Resensi</th>
+                        <th>Ciri Utama</th>
+                        <th>Tujuan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Informatif</td>
+                        <td>Singkat, ringkas</td>
+                        <td>Memberikan gambaran umum</td>
+                    </tr>
+                    <tr>
+                        <td>Deskriptif</td>
+                        <td>Rinci per bagian</td>
+                        <td>Menguraikan isi secara detail</td>
+                    </tr>
+                    <tr>
+                        <td>Kritis</td>
+                        <td>Analitis, akademis</td>
+                        <td>Menganalisis dengan pendekatan ilmiah</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- F. Contoh Teks Ulasan -->
+            <h3>F. Contoh Teks Ulasan</h3>
+
+            <div class="contoh-teks">
+                <h4>📝 Contoh Teks Ulasan Novel</h4>
+                <div class="judul-teks">ULASAN NOVEL "LASKAR PELANGI" KARYA ANDREA HIRATA</div>
+
+                <p><strong>Identitas Karya:</strong><br>
+                Judul: Laskar Pelangi<br>
+                Pengarang: Andrea Hirata<br>
+                Penerbit: Bentang Pustaka<br>
+                Tahun terbit: 2005<br>
+                Tebal: 529 halaman<br>
+                Genre: Novel</p>
+
+                <p><span class="struktur-label">EVALUASI</span>
+                <em>Laskar Pelangi</em> merupakan salah satu novel Indonesia paling fenomenal yang berhasil memikat jutaan pembaca, baik di dalam maupun luar negeri. Novel ini mengangkat kisah inspiratif tentang perjuangan anak-anak Belitung dalam meraih pendidikan di tengah keterbatasan. Andrea Hirata berhasil menyajikan cerita yang menyentuh hati dengan gaya bahasa yang unik dan penuh humor.</p>
+
+                <p><span class="struktur-label">DESKRIPSI</span>
+                Novel ini mengisahkan sepuluh anak dari keluarga miskin di Belitung yang bersekolah di SD Muhammadiyah Gantong. Tokoh utama, Ikal (alter ego Andrea Hirata), bersama teman-temannya — Lintang, Mahar, A Kiong, Trapani, dan lainnya — menghadapi berbagai tantangan dalam menuntut ilmu. Mereka harus berjuang melawan kemiskinan, diskriminasi dari sekolah negeri, dan keterbatasan fasilitas. Namun, semangat belajar mereka tidak pernah padam, terutama berkat bimbingan Bu Muslimah dan Pak Harfan, dua guru yang penuh dedikasi.</p>
+
+                <p>Novel ini terbagi dalam 25 bab yang masing-masing memiliki judul unik. Setiap bab menyajikan cerita yang berbeda namun tetap terkait dengan tema besar tentang pendidikan, persahabatan, dan mimpi. Andrea Hirata menggunakan gaya bahasa yang kaya dengan metafora, peribahasa, dan istilah lokal Melayu Belitung yang menambah warna khas cerita.</p>
+
+                <p><span class="struktur-label">PENAFSIRAN</span>
+                <strong>Kelebihan:</strong> Novel ini memiliki alur yang menarik dan tidak membosankan. Gaya bahasa Andrea Hirata yang puitis namun humoris membuat pembaca terbawa suasana. Karakter-karakter dalam novel ini digambarkan dengan sangat hidup, terutama Lintang yang jenius namun miskin, dan Mahar yang kreatif dan penuh imajinasi. Nilai-nilai pendidikan, persahabatan, dan perjuangan sangat kental dalam cerita ini.</p>
+
+                <p><strong>Kekurangan:</strong> Beberapa bagian cerita terasa terlalu idealis, terutama pada adegan-adegan yang melibatkan keajaiban atau keberuntungan yang berlebihan. Selain itu, penggunaan istilah-istilah Melayu Belitung yang cukup banyak mungkin menyulitkan pembaca dari daerah lain.</p>
+
+                <p><strong>Rekomendasi:</strong> Novel ini sangat layak dibaca oleh semua kalangan, khususnya remaja dan pelajar. <em>Laskar Pelangi</em> tidak hanya menghibur, tetapi juga memberikan pelajaran berharga tentang pentingnya pendidikan, persahabatan, dan mimpi. Novel ini cocok dibaca oleh siswa MTs dan SMA sebagai bahan inspirasi dalam menuntut ilmu.</p>
+            </div>
+
+            <!-- G. Cara Menyusun Teks Ulasan -->
+            <h3>G. Cara Menyusun Teks Ulasan</h3>
+            <p>Menyusun teks ulasan memerlukan langkah-langkah sistematis agar hasil ulasan dapat tersusun dengan baik dan bermanfaat bagi pembaca. Berikut adalah tahapan menyusun teks ulasan:</p>
+
+            <h4>Langkah 1: Memilih Karya yang Akan Diulas</h4>
+            <p>Pilihlah karya yang menarik dan relevan untuk diulas, seperti buku, film, atau drama. Pastikan karya tersebut sudah dibaca atau ditonton secara keseluruhan.</p>
+
+            <h4>Langkah 2: Mencatat Identitas Karya</h4>
+            <p>Catatlah identitas karya secara lengkap, termasuk judul, pengarang/sutradara, penerbit/rumah produksi, tahun terbit, jumlah halaman/durasi, dan genre.</p>
+
+            <h4>Langkah 3: Membaca/Menonton dengan Seksama</h4>
+            <p>Baca atau tonton karya secara keseluruhan sambil mencatat poin-poin penting, seperti tema, alur, tokoh, latar, gaya bahasa, serta kelebihan dan kekurangan yang ditemukan.</p>
+
+            <h4>Langkah 4: Menyusun Kerangka Ulasan</h4>
+            <p>Buatlah kerangka karangan berdasarkan struktur teks ulasan:</p>
+            <ul>
+                <li>Evaluasi: Apa penilaian umum terhadap karya?</li>
+                <li>Deskripsi: Apa isi karya dan identitasnya?</li>
+                <li>Penafsiran: Apa kelebihan, kekurangan, dan rekomendasi?</li>
+            </ul>
+
+            <h4>Langkah 5: Mengembangkan Kerangka Menjadi Teks Utuh</h4>
+            <p>Kembangkan setiap bagian kerangka menjadi paragraf yang utuh. Gunakan bahasa yang jelas, logis, dan sesuai kaidah bahasa Indonesia baku. Sertakan kutipan atau contoh dari karya untuk memperkuat ulasan.</p>
+
+            <h4>Langkah 6: Menyunting Tulisan</h4>
+            <p>Baca kembali tulisan yang telah dibuat. Perbaiki kesalahan ejaan, tata bahasa, struktur kalimat, dan kesesuaian isi. Pastikan ulasan sudah memenuhi kaidah teks ulasan.</p>
+
+            <div class="info-box">
+                <h4>📝 Tips Menyusun Teks Ulasan yang Baik</h4>
+                <ul>
+                    <li>Baca/tonton karya minimal dua kali untuk pemahaman yang mendalam.</li>
+                    <li>Buat catatan kecil saat membaca/menonton untuk memudahkan penulisan.</li>
+                    <li>Berikan penilaian yang berimbang — sebutkan kelebihan DAN kekurangan.</li>
+                    <li>Gunakan bahasa yang menarik namun tetap objektif.</li>
+                    <li>Sertakan kutipan atau adegan penting dari karya sebagai bukti.</li>
+                    <li>Tutup ulasan dengan rekomendasi yang jelas.</li>
+                </ul>
+            </div>
+
+            <!-- H. Relevansi bagi Siswa MTs -->
+            <h3>H. Relevansi Teks Ulasan bagi Siswa MTs</h3>
+            <p>Penguasaan teks ulasan memiliki nilai yang sangat penting bagi siswa MTs kelas 9, baik untuk kepentingan akademik maupun kehidupan sehari-hari. Berikut beberapa alasan mengapa teks ulasan sangat relevan bagi siswa MTs:</p>
+
+            <ol>
+                <li><strong>Melatih berpikir kritis</strong> — siswa terbiasa menilai karya secara objektif dan berdasar.</li>
+                <li><strong>Meningkatkan kemampuan menulis</strong> — siswa terampil menyusun tulisan yang sistematis dan argumentatif.</li>
+                <li><strong>Membangun budaya literasi</strong> — siswa terdorong untuk rajin membaca buku, menonton film, dan mengapresiasi karya seni.</li>
+                <li><strong>Menunjang prestasi akademik</strong> — banyak tugas sekolah yang menuntut kemampuan menulis ulasan, seperti resensi buku bacaan.</li>
+                <li><strong>Persiapan ujian</strong> — soal-soal UN dan asesmen kompetensi sering memuat teks ulasan.</li>
+                <li><strong>Melestarikan nilai-nilai keislaman</strong> — siswa dapat mengulas buku-buku islami, film dakwah, atau karya seni bernuansa religius.</li>
+                <li><strong>Membangun literasi digital</strong> — di era digital, siswa mampu menulis ulasan di blog atau media sosial secara bertanggung jawab.</li>
+            </ol>
+
+            <p>Dalam konteks pendidikan Islam, teks ulasan juga dapat digunakan untuk mengapresiasi karya-karya para ulama, cendekiawan Muslim, atau seniman Muslim. Misalnya, siswa dapat mengulas buku-buku karya Buya Hamka, Quraish Shihab, atau film-film bernuansa islami. Hal ini sejalan dengan tujuan pendidikan MTs yang tidak hanya mengembangkan ilmu umum, tetapi juga ilmu agama dan budaya.</p>
+
+            <!-- Poin Penting -->
+            <div class="poin-penting">
+                <h4>📌 Poin Penting untuk Ujian</h4>
+                <ul>
+                    <li>Pahami pengertian teks ulasan menurut para ahli dan ciri-cirinya.</li>
+                    <li>Hafalkan struktur teks ulasan: evaluasi, deskripsi, penafsiran.</li>
+                    <li>Kuasai kaidah kebahasaan: konjungsi, ungkapan pendapat, kata evaluatif, kata deskriptif.</li>
+                    <li>Mampu membedakan jenis-jenis teks ulasan (informatif, deskriptif, kritis).</li>
+                    <li>Pahami langkah-langkah menyusun teks ulasan secara sistematis.</li>
+                    <li>Siapkan contoh teks ulasan beserta analisis strukturnya.</li>
+                    <li>Latih kemampuan mengulas buku, film, atau karya seni yang pernah dibaca/ditonton.</li>
+                </ul>
+            </div>
+
+            <!-- Navigasi Bawah -->
+            <div class="bottom-nav">
+                <a href="index.html">🏠 Kembali ke Beranda</a>
+                <a href="uji-formatif-3.html" class="primary">✍️ Uji Formatif Bab 3</a>
+                <a href="4.html">Bab Selanjutnya →</a>
+            </div>
+
+        </article>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Buku Bahasa Indonesia Kelas 9</h4>
+                <p>Buku ajar untuk siswa MTs kelas 9. Teori, praktik, dan aplikasi berbahasa Indonesia secara terpadu.</p>
+            </div>
+            <div>
+                <h4>Navigasi</h4>
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang Buku</a>
+                <a href="index.html#bab">Daftar Bab</a>
+                <a href="index.html#penulis">Penulis</a>
+            </div>
+            <div>
+                <h4>Buku</h4>
+                <p>Edisi 2026</p>
+                <p>MTsS Halaban Anda</p>
+            </div>
+            <div>
+                <h4>Kontak</h4>
+                <a href="mailto:mtshalaban313@gmail.com">mtshalaban313@gmail.com</a>
+                <p>MTsS Halaban Anda</p>
+                <p>Murniati, S.Pd</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Murniati, S.Pd — MTsS Halaban Anda. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
